@@ -6,6 +6,7 @@ import LinkedinImg from '../images/LinkedinImg.png';
 import githubImg from '../images/githubImg.png'
 import instaImg from '../images/instaImg.png';
 
+import '../styles/global.scss'
 
 export function Home(){
   return (
