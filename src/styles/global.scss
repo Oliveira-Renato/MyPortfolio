@@ -9,8 +9,7 @@
 }
 
 /*Organizando o menu hamburguer superior direito*/
-.toggle
-{
+.toggle {
     position: fixed;
     top: 30px;
     right: 30px;
@@ -31,4 +30,499 @@
     }
 }
 
+/*pagina inicial*/
+section {
+    padding: 100px;
+    min-height: 100vh;
 
+    &.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+
+    .imgSidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 100%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+    }
+
+  }
+
+
+  .logoText {
+      position: absolute;
+      top: 40px;
+      left: 100px;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #333;
+      color: #fff;
+      padding: 0 5px;
+  }
+
+
+}
+
+.contentBox, .sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 500px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px
+}
+
+
+.banner .contentBox h4 {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 300;
+}
+
+.banner .contentBox h4 span
+{
+    color: #00bcd4;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.banner .contentBox h2 {
+    font-size: 3em;
+    color: #333;
+    line-height: 1em;
+}
+
+p {
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+
+
+.btn {
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    &:hover
+    {
+        background: #333;
+        transition-duration: 0.5s;
+    }
+}
+
+
+
+.sidebar {
+    position: fixed;
+    background: #000;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 40px;
+    z-index: 100;
+    right: -100%;
+
+    &.active {
+        right: 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        li {
+          list-style: none;
+
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2em;
+            margin: 10px 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #00bcd4;
+          }
+        }
+      }
+    }
+
+}
+
+ 
+
+.sci {
+    position: absolute;
+    left: 100px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-right: 10px;
+      list-style: none;
+
+      img {
+        width: 65px;
+        transform: scale(0.5);
+        opacity: 0.7;
+
+        &:hover {
+          transform: scale(0.8);
+          transition: 0.3s;
+          opacity: 1;
+      }
+    }
+  }
+}
+
+
+/* ------SOBRE ----------*/
+.title {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      position: relative;
+      color:#00bcd4;
+      font-size: 1.8em;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      p {
+          max-width: 700px;
+          display: inline-block;
+      }
+
+      &::before, .skills h2::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 60px;
+        height: 4px;
+        background: #000;
+    }
+  }
+
+  &.white h2, .title.white p {
+      color: #fff;
+  }
+
+  &.white h2::before {
+      background: #fff;
+  }
+}
+
+
+
+
+
+.about
+{
+    background: #000;
+}
+.about .content, .skills .skills-content
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    text-align: justify;
+}
+.about .content .textBx
+{
+    min-width: 49%;
+    width: 49%;
+}
+.about .content .textBx p
+{
+    color: #fff;
+}
+.about .content .imgBx
+{
+    margin-left: 40px;
+}
+.about .content .imgBx img
+{
+    max-width: 100%;
+}
+/* ----------SKILLS---------------*/
+.skills .skills-content .column
+{ 
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text
+{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #333;
+}
+/*------Habilidades ----e-----Experiencia-----*/
+.skills .skills-content .left .hab
+{
+    font-weight: bolder;
+    font-size: 30px;
+}
+.skills .skills-content .left .exp
+{
+    font-weight: bolder;
+    font-size: 30px;   
+}
+.skills .skills-content .left .simbol
+{
+    color: #00bcd4;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+/*----------ends here--------------------*/
+
+
+.skills .skills-content .right .bars
+{   
+    margin-bottom: 15px;   
+}
+.skills .skills-content .right .info
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span
+{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line
+{
+    height: 5px;
+    width: 100%;
+    background: #333;
+    position: relative;
+}
+.skills .skills-content .right .line::before
+{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background:#00bcd4;
+}
+/*-----HABILIDADES PORCENTAGEM------- */
+.skills-content .right .html::before
+{
+    width: 30%;
+}
+.skills-content .right .css::before
+{
+    width: 35%;
+}
+.skills-content .right .js::before
+{
+    width: 20%;
+}
+.skills-content .right .sql::before
+{
+    width: 30%;
+}
+.skills-content .right .java::before
+{
+    width: 25%;
+}
+/*------------Contatos---------*/
+.contact
+{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact .contactForm
+{
+    position: relative;
+    width: 700px;
+    margin-top: 20px;
+}
+.contact .contactForm .row
+{
+    width: 100%;
+    display: flex;
+}
+.contact .contactForm .row .col50
+{
+    width: 50%;
+    margin: 10px;
+}
+.contact .contactForm .row .col100
+{
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+}
+.contact .contactForm .row input,
+.contact .contactForm .row textarea
+{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    resize: none;
+}
+.contact .contactForm .row textarea
+{
+    height: 100px;
+}
+.contact .contactForm .row input[type="submit"]
+{
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    max-width: 150px;
+}
+.contact .contactForm .row input[type="submit"]:hover
+{
+    background: #333;
+    transition-duration: 0.5s;
+}
+
+
+/*Corrigindo a exibição em telas menores*/
+@media (max-width: 991px)
+{
+    .banner .imgSidebar
+    {
+        display: none;
+    }
+    .banner .contentBox .sidebar
+    {  
+        width: max-content;
+        padding: 30px;
+    }
+    .sidebar.active{
+        width: max-content;
+    }
+    .logoText
+    {
+        left:20px;
+        top: 20px;
+    }
+    .banner 
+    {
+        right: 5px;
+    }
+    .sci
+    {
+        left: 50%;
+        bottom: 0;
+    }
+    section
+    {
+        padding: 30px;
+    }
+    .about .content
+    {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .about .content .textBx
+    {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .banner .contentBox, .sidebar
+    {
+        display: flex;
+        width: auto;
+        text-align: justify;
+        padding: 30px;
+    }
+    
+    .about .content .imgBx
+    {
+        margin-left: 0;
+    }
+    .skills-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        text-align: justify;
+    }
+    .skills .skills-content
+    {
+        justify-content: center;
+    }
+    .skills .skills-content .column
+    {
+        width: auto;
+    }
+    .contact .contactForm
+    {
+        width: 100%;
+    }
+    .contactForm .row
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contact .contactForm .row .col50
+    {
+        width: 100%;
+    }
+    .sidebar ul li a
+    {
+        font-size: 1.5em;
+    }
+    .sidebar.active
+    {
+        width: 50%;
+    }
+    .skills .skills-content .left .text
+    {
+        text-align: center;
+    }
+}
+
+
+/*pagina inicial*/

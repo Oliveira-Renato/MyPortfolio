@@ -1,4 +1,4 @@
-import { toggleMenu } from '../components/Toggle'
+import { toggleMenu } from '../components/Toggle';
 
 import homeImg from '../images/homeImg.jpg';
 import aboutImg from '../images/aboutImg.jpg'
@@ -155,11 +155,21 @@ export function Home(){
             {/* <-----------Opções do menu ----------------> */}
             <div className="sidebar">
                 <ul className="menu">
-                    <li><a href="#home" onClick={ toggleMenu }>Início</a></li>
-                    <li><a href="#about" onClick={ toggleMenu }>Sobre</a></li>
-                    <li><a href="#skills" onClick={ toggleMenu }>Habilidades</a></li>
-                    <li><a href="#" onClick={ toggleMenu }>Projetos</a></li>
-                    <li><a href="#cantact" onClick={ toggleMenu }>Contato</a></li>
+                    <li>
+                        <a href="#home" onClick={ toggleMenu }>Início</a>
+                    </li>
+                    <li>
+                        <a href="#about" onClick={ toggleMenu }>Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#skills" onClick={ toggleMenu }>Habilidades</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick={ toggleMenu }>Projetos</a>
+                    </li>
+                    <li>
+                        <a href="#cantact" onClick={ toggleMenu }>Contato</a>
+                    </li>
                 </ul>
             </div>
     </div>
