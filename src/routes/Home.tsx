@@ -95,7 +95,7 @@ export function Home(){
                             <div className="bars">   
                                 <div className="info">
                                     <span>JavaScript</span>
-                                    <span>20%</span>
+                                    <span>45%</span>
                                 </div>
                                 <div className="line js"></div>
                             </div> 
@@ -108,8 +108,8 @@ export function Home(){
                             </div>
                             <div className="bars"> 
                                 <div className="info">
-                                    <span>Java</span>
-                                    <span>25%</span>
+                                    <span>Python</span>
+                                    <span>30%</span>
                                 </div>
                                 <div className="line java"></div>
                             </div>
