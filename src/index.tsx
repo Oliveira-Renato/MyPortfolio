@@ -4,6 +4,7 @@ import App from './App';
 
 
 import './styles/global.scss'
+import './styles/media.scss';
 
 ReactDOM.render(
   <React.StrictMode>

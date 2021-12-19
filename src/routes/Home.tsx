@@ -7,6 +7,7 @@ import githubImg from '../images/githubImg.png'
 import instaImg from '../images/instaImg.png';
 
 import '../styles/global.scss'
+import '../styles/media.scss'
 
 export function Home(){
   return (

@@ -1,0 +1,97 @@
+/*Corrigindo a exibição em telas menores*/
+@media (max-width: 991px)
+{
+    .banner .imgSidebar
+    {
+        display: none;
+    }
+    .banner .contentBox .sidebar
+    {  
+        width: max-content;
+        padding: 30px;
+    }
+    .sidebar.active{
+        width: max-content;
+    }
+    .logoText
+    {
+        left:20px;
+        top: 20px;
+    }
+    .banner 
+    {
+        right: 5px;
+    }
+    .sci
+    {
+        left: 50%;
+        bottom: 0;
+    }
+    section
+    {
+        padding: 30px;
+    }
+    .about .content
+    {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .about .content .textBx
+    {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .banner .contentBox, .sidebar
+    {
+        display: flex;
+        width: auto;
+        text-align: justify;
+        padding: 30px;
+    }
+    
+    .about .content .imgBx
+    {
+        margin-left: 0;
+    }
+    .skills-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        text-align: justify;
+    }
+    .skills .skills-content
+    {
+        justify-content: center;
+    }
+    .skills .skills-content .column
+    {
+        width: auto;
+    }
+    .contact .contactForm
+    {
+        width: 100%;
+    }
+    .contactForm .row
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contact .contactForm .row .col50
+    {
+        width: 100%;
+    }
+    .sidebar ul li a
+    {
+        font-size: 1.5em;
+    }
+    .sidebar.active
+    {
+        width: 50%;
+    }
+    .skills .skills-content .left .text
+    {
+        text-align: center;
+    }
+}
