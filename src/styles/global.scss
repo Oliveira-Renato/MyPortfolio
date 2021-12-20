@@ -303,75 +303,82 @@ p {
       font-weight: 700;
       margin-top: 1rem;
       color: #333;
-  }
 
-  .left .hab {
-      font-weight: bolder;
-      font-size: 3rem;
-  }
+      .hab {
+          font-weight: bolder;
+          font-size: 3rem;
+      }
 
-  .left .exp {
-      font-weight: bolder;
-      font-size: 3rem;   
-  }
+      .exp {
+          font-weight: bolder;
+          font-size: 3rem;   
 
-  .left .simbol {
-      color: #00bcd4;
-      font-weight: 700;
-      font-size: 3.6rem;
+      }
+
+      .simbol {
+          color: #00bcd4;
+          font-weight: 700;
+          font-size: 3.6rem;
+      }
   }
+ 
   /*----------ends here--------------------*/
   .right .bars {   
-      margin-bottom: 15px;   
-  }
+      margin-bottom: 15px; 
+      
+        .info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
 
-  .right .info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
+        span {
+          font-weight: 500;
+          font-size: 1.9rem;
+      }
 
-  .right span {
-      font-weight: 500;
-      font-size: 1.9rem;
-  }
+        .line {
+          height: 5px;
+          width: 100%;
+          background: #333;
+          position: relative;
 
-  .right .line {
-      height: 5px;
-      width: 100%;
-      background: #333;
-      position: relative;
-  }
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background:#00bcd4;
+        }
+    }
+  
+}
 
-  .right .line::before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background:#00bcd4;
-  }
   /*-----HABILIDADES PORCENTAGEM------- */
 
-  .right .html::before {
-      width: 30%;
-  }
+  .right {
+      .html::before {
+        width: 30%;
+    }
 
-  .right .css::before {
-      width: 35%;
-  }
+      .css::before {
+        width: 35%;
+    }
 
-  .right .js::before {
-      width: 45%;
-  }
+      .js::before {
+        width: 45%;
+    }
 
-  .right .sql::before {
-      width: 30%;
-  }
+      .sql::before {
+        width: 30%;
+    }
 
-  .right .java::before {
-      width: 30%;
+      .java::before {
+        width: 30%;
+    }
   }
+  
 }
 
 
