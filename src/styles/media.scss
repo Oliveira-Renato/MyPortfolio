@@ -8,22 +8,27 @@
 
 @media (max-width: 1100px) {
   html {
-    font-size: 50.5%;
+    font-size: 48%;
+  }
+
+  .skills .skills-content .left .text {
+      font-size: 11px;
   }
 }
 
-@media (max-width: 1035px) {
-  html {
-    font-size: 58.5%;
-  }
-}
+// @media (max-width: 1035px) {
+//   html {
+//     font-size: 58.5%;
+//   }
+// }
 
 
 @media (max-width: 1024) {
   html {
     font-size: 48%;
   }
-    .skills .skills-content .left .text {
+  
+  .skills .skills-content .left .text {
       font-size: 11px;
   }
 }
