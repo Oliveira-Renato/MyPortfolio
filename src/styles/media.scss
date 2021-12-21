@@ -18,6 +18,16 @@
   }
 }
 
+
+@media (max-width: 1024) {
+  html {
+    font-size: 48%;
+  }
+    .skills .skills-content .left .text {
+      font-size: 11px;
+  }
+}
+
 @media (max-width: 991px)
 {
     html {

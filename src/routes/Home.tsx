@@ -5,6 +5,7 @@ import aboutImg from '../images/aboutImg.jpg'
 import LinkedinImg from '../images/LinkedinImg.png';
 import githubImg from '../images/githubImg.png'
 import instaImg from '../images/instaImg.png';
+import mySelf from '../images/myself.jpeg'
 
 import '../styles/global.scss'
 import '../styles/media.scss'
@@ -56,7 +57,7 @@ export function Home(){
                     </div>
                     {/* Imagem pessoal da pagina sobre */}
                     <div className="imgBx">
-                        <img src={ aboutImg } />
+                        <img src={ mySelf } />
                     </div>
                 </div>
             </section>
