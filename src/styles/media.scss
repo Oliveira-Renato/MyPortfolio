@@ -33,8 +33,7 @@
   }
 }
 
-@media (max-width: 991px)
-{
+@media (max-width: 991px) {
     html {
       font-size: 58.5%;
     }
@@ -134,6 +133,14 @@
     }
 }
 
+@media (max-width: 736px) {
+    .contentBox {
+      
+      > h4 {
+        font-size: 3.2rem;
+      }
+  }
+}
 
 @media (max-width: 667px) {
   html {
