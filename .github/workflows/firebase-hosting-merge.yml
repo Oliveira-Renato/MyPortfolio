@@ -1,5 +1,4 @@
-Deploy to your live channel on merge
-Add a workflow (.github/workflows/deploy-prod.yml):
+# Deploy to your live channel on merge
 
 name: Deploy to Firebase Hosting on merge
 
