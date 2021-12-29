@@ -5,12 +5,36 @@ import aboutImg from '../images/aboutImg.jpg'
 import LinkedinImg from '../images/LinkedinImg.png';
 import githubImg from '../images/githubImg.png'
 import instaImg from '../images/instaImg.png';
-import mySelf from '../images/myself.jpeg'
+import mySelf from '../images/myself.jpeg';
+
 
 import '../styles/global.scss'
 import '../styles/media.scss'
+import { FormEvent, useState } from 'react';
+
+
+type InputsContent = {
+    name: string,
+    lastname:string,
+    email: string,
+    subject: string,
+    message: string
+}
+
 
 export function Home(){
+    const [inputs, setInputs] = useState<InputsContent[]>([]);
+
+    function handleInputChange(event: any){
+        inputs[event.target.name] = event.target.value;  
+        setInputs(inputs);
+    }
+    
+    function handleSubmitForm(event: FormEvent) {
+        event.preventDefault();
+        console.log(inputs)
+    }
+
   return (
     
     <div>
@@ -124,26 +148,32 @@ export function Home(){
                     <h2>Entre em Contato</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
                 </div>
-                    <div className="contactForm">
+                <form onSubmit={ handleSubmitForm }>
+                <div className="contactForm">
                         <div className="row">
                             <div className="col50">
-                                <input type="text" name="" placeholder="Primeiro Nome" />
+                                <label htmlFor="name"></label>
+                                <input type="text" name="name" placeholder="Primeiro Nome" onChange={ handleInputChange }/>
                             </div>
                             <div className="col50">
-                                <input type="text" name="" placeholder="Sobrenome" />
+                                <label htmlFor="lastname"></label>
+                                <input type="text" name="lastname" placeholder="Sobrenome" onChange={ handleInputChange }/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
-                                <input type="text" name="" placeholder="Email" />
+                                <label htmlFor="email"></label>
+                                <input type="text" name="email" placeholder="Email" onChange={ handleInputChange }/>
                             </div>
                             <div className="col50">
-                                <input type="text" name="" placeholder="Assunto" />
+                                <label htmlFor="subject"></label>
+                                <input type="text" name="subject" placeholder="Assunto" onChange={ handleInputChange }/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
-                                <textarea placeholder="Digite aqui..."></textarea>
+                                <label htmlFor="message"></label>
+                                <textarea name='message' placeholder="Digite sua mensagem aqui..." onChange={ handleInputChange }></textarea>
                             </div>
                         </div>
                         <div className="row">
@@ -152,6 +182,7 @@ export function Home(){
                             </div>
                         </div>
                     </div>
+                </form>
             </section>
             
             {/* <-----------Opções do menu ----------------> */}
