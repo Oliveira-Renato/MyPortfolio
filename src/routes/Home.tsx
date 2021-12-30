@@ -25,19 +25,17 @@ type InputsContent = {
 
 
 export function Home(){
-    const [inputs, setInputs] = useState('');
     const [loader, setLoader] = useState(false);
     const [name, setName] = useState('')
+    const [lastname, setLastname] = useState('')
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [message, setMessage] = useState('')
 
-    // function handleInputChange(event){
-    //     inputs[event.target.name] = event.target.value;  
-    //     setInputs(inputs);
-    // }
     
     function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
         // setLoader(true);
-        console.log(inputs);
         console.log(name)
         setName("");
     }
@@ -164,23 +162,23 @@ export function Home(){
                             </div>
                             <div className="col50">
                                 <label htmlFor="lastname"></label>
-                                <input type="text" name="lastname" placeholder="Sobrenome" onChange={event => setInputs(event.target.value)}/>
+                                <input type="text" name="lastname" value={lastname} placeholder="Sobrenome" onChange={event => setLastname(event.target.value)}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" name="email" placeholder="Email" onChange={event => setInputs(event.target.value)}/>
+                                <input type="text" name="email" value={email} placeholder="Email" onChange={event => setEmail(event.target.value)}/>
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
-                                <input type="text" name="subject" placeholder="Assunto" onChange={event => setInputs(event.target.value)}/>
+                                <input type="text" name="subject" value={subject} placeholder="Assunto" onChange={event => setSubject(event.target.value)}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
                                 <label htmlFor="message"></label>
-                                <textarea name='message' placeholder="Digite sua mensagem aqui..." onChange={event => setInputs(event.target.value)}></textarea>
+                                <textarea name='message' value={message} placeholder="Digite sua mensagem aqui..." onChange={event => setMessage(event.target.value)}></textarea>
                             </div>
                         </div>
                         <div className="row">
