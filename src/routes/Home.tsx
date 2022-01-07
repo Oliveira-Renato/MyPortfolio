@@ -15,11 +15,11 @@ import { FormEvent, useState, useEffect  } from 'react';
 
 
 type InputsContent = {
-    name?: string | null,
-    lastname?:string| null,
-    email?: string| null,
-    subject?: string| null,
-    message?: string| null
+    name?: string | undefined,
+    lastname?:string| undefined,
+    email?: string | undefined,
+    subject?: string| undefined,
+    message?: string| undefined
 }
 
 
@@ -28,11 +28,7 @@ type InputsContent = {
 export function Home(){
     const [inputs, setInputs] = useState<InputsContent[]>([]);
     const [loader, setLoader] = useState(false);
-    // const [name, setName] = useState('')
-    // const [lastname, setLastname] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [subject, setSubject] = useState('')
-    // const [message, setMessage] = useState('')
+   
 
     
     function handleInputChange(event: any) {
@@ -41,7 +37,7 @@ export function Home(){
         setInputs(inputs)
     }
 
-    function handleSubmitForm(event: FormEvent) {
+    function handleSubmitForm(event: any) {
         event.preventDefault();
     
         const data = Object.entries(inputs).map(([key,value]) =>{ 
@@ -60,9 +56,11 @@ export function Home(){
 
        console.log(dataObj)
 
+        
+
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
         var campos: any= document.querySelectorAll('input')
-        var textArea: any= document.querySelector('textarea')
+        var textArea: any= document.querySelectorAll('textarea')
 
         for (let i = 0;i <= campos.length-2; i++) {
              campos[i].value = '';     
@@ -70,7 +68,8 @@ export function Home(){
         if(textArea[0].value != '') {
              textArea[0].value = '';
          }
-        
+         
+         
         
     }
     
@@ -79,7 +78,7 @@ export function Home(){
     
     <div>
         <div className="toggle" onClick={toggleMenu}></div>
-         {/* pagina inicial    */}
+         {/*pagina inicial*/}
             <section className="banner" id="home">
                 <div className="imgSidebar">
                     <img src={ homeImg } alt='Logo home'/>
@@ -203,7 +202,7 @@ export function Home(){
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" name="email" placeholder="Email" onChange={ handleInputChange }/>
+                                <input type="text" name="email" placeholder="Email" onChange={ handleInputChange } />
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
