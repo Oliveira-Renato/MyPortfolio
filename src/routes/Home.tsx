@@ -15,11 +15,11 @@ import { FormEvent, useState, useEffect  } from 'react';
 
 
 type InputsContent = {
-    name?: string,
-    lastname?:string,
-    email?: string,
-    subject?: string,
-    message?: string
+    name?: string | null,
+    lastname?:string| null,
+    email?: string| null,
+    subject?: string| null,
+    message?: string| null
 }
 
 
@@ -43,22 +43,21 @@ export function Home(){
 
     function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
-        // setLoader(true);
-        // console.log(name)
-        // // setName("");
+    
         const data = Object.entries(inputs).map(([key,value]) =>{ 
             return {
                 [key]: value,
             }
         })
 
-        
+       console.log(data)
+
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
         var campos: any= document.querySelectorAll('input')
         var textArea: any= document.querySelectorAll('textarea')
 
         for (let i = 0;i <= campos.length-2; i++) {
-              campos[i].value = '';     
+             campos[i].value = '';     
         }
         if(textArea[0].value != '') {
              textArea[0].value = '';
