@@ -1,4 +1,15 @@
 /*Corrigindo a exibição em telas menores*/
+@media (max-width: 2000px) {
+  html {
+    font-size: 78.5%;
+  }
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 72.5%;
+  }
+}
 
 @media (max-width: 1200px) {
   html {
@@ -16,16 +27,11 @@
   }
 }
 
-// @media (max-width: 1035px) {
-//   html {
-//     font-size: 58.5%;
-//   }
-// }
 
 
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
   html {
-    font-size: 48%;
+    font-size: 47%;
   }
   
   .skills .skills-content .left .text {
