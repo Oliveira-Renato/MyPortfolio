@@ -1,7 +1,7 @@
 import { toggleMenu } from '../components/Toggle';
 
 import homeImg from '../images/homeImg.jpg';
-import aboutImg from '../images/aboutImg.jpg'
+import aboutImg from '../images/aboutImg.jpg';
 import LinkedinImg from '../images/LinkedinImg.png';
 import githubImg from '../images/githubImg.png'
 import instaImg from '../images/instaImg.png';
@@ -50,11 +50,19 @@ export function Home(){
             }
         })
 
-       console.log(data)
+       const dataObj:object = {
+            nome: data[0]?.name,
+            lastname: data[1]?.lastname,
+            email: data[2]?.email,
+            subject: data[3]?.subject,
+            message: data[4]?.message   
+       }
+
+       console.log(dataObj)
 
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
         var campos: any= document.querySelectorAll('input')
-        var textArea: any= document.querySelectorAll('textarea')
+        var textArea: any= document.querySelector('textarea')
 
         for (let i = 0;i <= campos.length-2; i++) {
              campos[i].value = '';     
