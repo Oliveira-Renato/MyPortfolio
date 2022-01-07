@@ -11,7 +11,7 @@ import mySelf from '../images/myself.jpeg';
 import '../styles/global.scss'
 import '../styles/media.scss'
 
-import { FormEvent, useState, useEffect  } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 
 
 type InputsContent = {
@@ -29,15 +29,13 @@ export function Home(){
     const [inputs, setInputs] = useState<InputsContent[]>([]);
     const [loader, setLoader] = useState(false);
    
-
-    
     function handleInputChange(event: any) {
         inputs[event.target.name] = event.target.value;
 
         setInputs(inputs)
     }
 
-    function handleSubmitForm(event: any) {
+    function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
     
         const data = Object.entries(inputs).map(([key,value]) =>{ 
@@ -45,6 +43,8 @@ export function Home(){
                 [key]: value,
             }
         })
+
+        console.log(data)
 
        const dataObj:object = {
             nome: data[0]?.name,
@@ -55,9 +55,7 @@ export function Home(){
        }
 
        console.log(dataObj)
-
         
-
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
         var campos: any= document.querySelectorAll('input')
         var textArea: any= document.querySelectorAll('textarea')
@@ -69,7 +67,7 @@ export function Home(){
              textArea[0].value = '';
          }
          
-         
+         setInputs([{name: '', lastname: '', email: '',subject:'',message:''}])
         
     }
     
