@@ -12,33 +12,61 @@ import '../styles/global.scss'
 import '../styles/media.scss'
 
 import { FormEvent, useState, useEffect  } from 'react';
-import { db } from "../services/firebase";
 
 
 type InputsContent = {
-    name: string,
-    lastname:string,
-    email: string,
-    subject: string,
-    message: string
+    name?: string,
+    lastname?:string,
+    email?: string,
+    subject?: string,
+    message?: string
 }
 
 
+
+
 export function Home(){
+    const [inputs, setInputs] = useState<InputsContent[]>([]);
     const [loader, setLoader] = useState(false);
-    const [name, setName] = useState('')
-    const [lastname, setLastname] = useState('')
-    const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
-    const [message, setMessage] = useState('')
+    // const [name, setName] = useState('')
+    // const [lastname, setLastname] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [subject, setSubject] = useState('')
+    // const [message, setMessage] = useState('')
 
     
+    function handleInputChange(event: any) {
+        inputs[event.target.name] = event.target.value;
+
+        setInputs(inputs)
+    }
+
     function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
         // setLoader(true);
-        console.log(name)
-        setName("");
+        // console.log(name)
+        // // setName("");
+        const data = Object.entries(inputs).map(([key,value]) =>{ 
+            return {
+                [key]: value,
+            }
+        })
+
+        
+        // //código temporário, preciso resolver como fazer isso de maneira mais elegante
+        var campos: any= document.querySelectorAll('input')
+        var textArea: any= document.querySelectorAll('textarea')
+
+        for (let i = 0;i <= campos.length-2; i++) {
+              campos[i].value = '';     
+        }
+        if(textArea[0].value != '') {
+             textArea[0].value = '';
+         }
+        
+        
     }
+    
 
   return (
     
@@ -156,29 +184,29 @@ export function Home(){
                 <form onSubmit={ handleSubmitForm }>
                 <div className="contactForm">
                         <div className="row">
-                            <div className="col50">
+                        <div className="col50">
                                 <label htmlFor="name"></label>
-                                <input type="text" name="name" value={name}placeholder="Primeiro Nome" onChange={event => setName(event.target.value)} />
+                                <input type="text" name="name" placeholder="Primeiro Nome" onChange={ handleInputChange } />
                             </div>
                             <div className="col50">
                                 <label htmlFor="lastname"></label>
-                                <input type="text" name="lastname" value={lastname} placeholder="Sobrenome" onChange={event => setLastname(event.target.value)}/>
+                                <input type="text" name="lastname" placeholder="Sobrenome" onChange={ handleInputChange }/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" name="email" value={email} placeholder="Email" onChange={event => setEmail(event.target.value)}/>
+                                <input type="text" name="email" placeholder="Email" onChange={ handleInputChange }/>
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
-                                <input type="text" name="subject" value={subject} placeholder="Assunto" onChange={event => setSubject(event.target.value)}/>
+                                <input type="text" name="subject" placeholder="Assunto" onChange={ handleInputChange }  />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
                                 <label htmlFor="message"></label>
-                                <textarea name='message' value={message} placeholder="Digite sua mensagem aqui..." onChange={event => setMessage(event.target.value)}></textarea>
+                                <textarea name='message' placeholder="Digite sua mensagem aqui..." onChange={ handleInputChange }></textarea>
                             </div>
                         </div>
                         <div className="row">
