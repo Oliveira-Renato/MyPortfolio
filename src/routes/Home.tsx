@@ -27,8 +27,7 @@ type InputsContent = {
 
 export function Home(){
     const [inputs, setInputs] = useState<InputsContent[]>([]);
-    const [status, setStatus] = useState("Submit");
-    const formsId: any = document.getElementById('main-form');
+    const [status, setStatus] = useState("Enviar");
    
     function handleInputChange(event: any) {
         inputs[event.target.name] = event.target.value;
@@ -38,7 +37,7 @@ export function Home(){
 
     async function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
-        setStatus("Sending...");
+        setStatus("Enviando...");
 
         const data = Object.entries(inputs).map(([key,value]) =>{ 
             return {
@@ -47,12 +46,13 @@ export function Home(){
         })
 
        const dataObj:object = {
-            nome: data[0]?.name,
+            name: data[0]?.name,
             lastname: data[1]?.lastname,
             email: data[2]?.email,
             subject: data[3]?.subject,
             message: data[4]?.message   
        }
+       
 
        let response = await fetch("http://localhost:5000/contact", {
                 method: "POST",
@@ -62,12 +62,23 @@ export function Home(){
             body: JSON.stringify(dataObj),
         });
 
+
         setStatus("Submit");
         let result = await response.json();
-         
-        setInputs([])
-        formsId.reset();
+        console.log(dataObj)
+        alert(result.status);
         
+
+        // //código temporário, preciso resolver como fazer isso de maneira mais elegante
+        // var campos= document.querySelectorAll('input')
+        // var textArea= document.querySelectorAll('textarea')
+
+        // for (let i = 0;i <= campos.length-2; i++) {
+        //         campos[i].value = '';     
+        //     }
+        //     if(textArea[0].value != '') {
+        //         textArea[0].value = '';
+        //     }
         
     }
     
