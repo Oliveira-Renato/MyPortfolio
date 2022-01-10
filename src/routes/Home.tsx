@@ -27,7 +27,8 @@ type InputsContent = {
 
 export function Home(){
     const [inputs, setInputs] = useState<InputsContent[]>([]);
-    const [loader, setLoader] = useState(false);
+    const [status, setStatus] = useState("Submit");
+    const formsId: any = document.getElementById('main-form');
    
     function handleInputChange(event: any) {
         inputs[event.target.name] = event.target.value;
@@ -35,16 +36,15 @@ export function Home(){
         setInputs(inputs)
     }
 
-    function handleSubmitForm(event: FormEvent) {
+    async function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
-    
+        setStatus("Sending...");
+
         const data = Object.entries(inputs).map(([key,value]) =>{ 
             return {
                 [key]: value,
             }
         })
-
-        console.log(data)
 
        const dataObj:object = {
             nome: data[0]?.name,
@@ -54,20 +54,20 @@ export function Home(){
             message: data[4]?.message   
        }
 
-       console.log(dataObj)
-        
-        // //código temporário, preciso resolver como fazer isso de maneira mais elegante
-        var campos: any= document.querySelectorAll('input')
-        var textArea: any= document.querySelectorAll('textarea')
+       let response = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(dataObj),
+        });
 
-        for (let i = 0;i <= campos.length-2; i++) {
-             campos[i].value = '';     
-        }
-        if(textArea[0].value != '') {
-             textArea[0].value = '';
-         }
+        setStatus("Submit");
+        let result = await response.json();
          
-         setInputs([{name: '', lastname: '', email: '',subject:'',message:''}])
+        setInputs([])
+        formsId.reset();
+        
         
     }
     
@@ -185,37 +185,37 @@ export function Home(){
                     <h2>Entre em Contato</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
                 </div>
-                <form onSubmit={ handleSubmitForm }>
+                <form onSubmit={ handleSubmitForm } id='main-form'>
                 <div className="contactForm">
                         <div className="row">
                         <div className="col50">
                                 <label htmlFor="name"></label>
-                                <input type="text" name="name" placeholder="Primeiro Nome" onChange={ handleInputChange } />
+                                <input type="text" id="name" name="name" placeholder="Primeiro Nome" onChange={ handleInputChange } />
                             </div>
                             <div className="col50">
                                 <label htmlFor="lastname"></label>
-                                <input type="text" name="lastname" placeholder="Sobrenome" onChange={ handleInputChange }/>
+                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" onChange={ handleInputChange }/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" name="email" placeholder="Email" onChange={ handleInputChange } />
+                                <input type="text" id="email" name="email" placeholder="Email" onChange={ handleInputChange } />
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
-                                <input type="text" name="subject" placeholder="Assunto" onChange={ handleInputChange }  />
+                                <input type="text" id="subject" name="subject" placeholder="Assunto" onChange={ handleInputChange }  />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
                                 <label htmlFor="message"></label>
-                                <textarea name='message' placeholder="Digite sua mensagem aqui..." onChange={ handleInputChange }></textarea>
+                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." onChange={ handleInputChange }></textarea>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
-                                <input type="submit" value="Enviar" />
+                                <input type="submit" value={status} />
                             </div>
                         </div>
                     </div>
