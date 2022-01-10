@@ -1,0 +1,73 @@
+@keyframes short-press {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(.9);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-da-massa {
+  display: flex;
+  justify-content:center;
+}
+
+.hide {
+  display: none;
+}
+
+.submit-button {
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 38px;
+  width: 160px;
+  line-height: 38px;
+  overflow: hidden;
+  background: #00bcd4;
+  color: #fff;
+  box-shadow: 0 15px 30px rgba(black,.1);
+  border: 0;
+  cursor: pointer;
+  transition: all .3s ease;
+  
+  &:hover,
+  &:focus {
+    background: #333;
+    transition-duration: 0.5s;
+    box-shadow: 0 5px 15px rgba(black,.1);
+  }
+  
+  &.animated {
+    animation: .75s short-press cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
+  }
+  
+  > span {
+    display: block;
+    color: white;
+    text-align: center;
+    
+    &.pre-state-msg {
+      transition: all .7s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+      transition-delay: .75s;
+    }
+  }
+  
+  &.state-1 {
+    .pre-state-msg {
+      margin-top: -38px;
+    }
+  }
+  
+  &.state-2 {
+    .pre-state-msg {
+      margin-top: -76px;
+    }
+  }
+}

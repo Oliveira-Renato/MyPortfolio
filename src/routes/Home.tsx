@@ -12,6 +12,11 @@ import '../styles/global.scss'
 import '../styles/media.scss'
 
 import { FormEvent, useState, useEffect } from 'react';
+import { Button } from '../components/button'
+
+
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 type InputsContent = {
@@ -37,7 +42,7 @@ export function Home(){
 
     async function handleSubmitForm(event: FormEvent) {
         event.preventDefault();
-        setStatus("Enviando...");
+        // setStatus("Enviando...");
 
         const data = Object.entries(inputs).map(([key,value]) =>{ 
             return {
@@ -53,32 +58,61 @@ export function Home(){
             message: data[4]?.message   
        }
        
-
-       let response = await fetch("http://localhost:5000/contact", {
+       
+        try{
+            let response = await fetch("http://localhost:5000/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(dataObj),
-        });
+                },
+                body: JSON.stringify(dataObj),
+            });
 
 
-        setStatus("Submit");
-        let result = await response.json();
-        console.log(dataObj)
-        alert(result.status);
+            // setStatus("Submit");
+            let result = await response.json();
+            if(result.status != 'Message Sent') {
+                toast.error("Oops, Algo deu errado!", 
+                {
+                    icon: '😱',
+                    style: {
+                      width: '300px',
+                      background: '#333',
+                      color: '#fff',
+                      fontSize: '1.6em',
+                    },
+                  })
+                  
+            }else{
+                toast.success('Enviado com sucesso!',
+                {
+                    icon: '👍',
+                    style: {
+                        background: '#00bcd4',
+                        color: '#fff',
+                        width: '300px',
+                        fontSize: '1.6em',
+                    },
+                  })
+            }
+
+        }catch (err) {
+            console.log(err)
+        }
         
 
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
-        // var campos= document.querySelectorAll('input')
-        // var textArea= document.querySelectorAll('textarea')
+        var campos= document.querySelectorAll('input')
+        var textArea= document.querySelectorAll('textarea')
 
-        // for (let i = 0;i <= campos.length-2; i++) {
-        //         campos[i].value = '';     
-        //     }
-        //     if(textArea[0].value != '') {
-        //         textArea[0].value = '';
-        //     }
+        for (let i = 0;i <= campos.length-1; i++) {
+              campos[i].value = '';     
+           }
+        if(textArea[0].value != '') {
+              textArea[0].value = '';
+        }
+
+        setInputs([])
         
     }
     
@@ -86,6 +120,7 @@ export function Home(){
   return (
     
     <div>
+        <div><Toaster/></div>
         <div className="toggle" onClick={toggleMenu}></div>
          {/*pagina inicial*/}
             <section className="banner" id="home">
@@ -211,7 +246,7 @@ export function Home(){
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" id="email" name="email" placeholder="Email" onChange={ handleInputChange } />
+                                <input type="text" id="email" name="email" placeholder="Email" onChange={ handleInputChange }/>
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
@@ -225,8 +260,8 @@ export function Home(){
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col100">
-                                <input type="submit" value={status} />
+                            <div className="col100 btn-da-massa">
+                                <Button />
                             </div>
                         </div>
                     </div>
