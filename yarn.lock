@@ -4510,7 +4510,7 @@ expect@^27.4.2:
     jest-message-util "^27.4.2"
     jest-regex-util "^27.4.0"
 
-express@^4.17.1, express@^4.17.2:
+express@^4.16.2, express@^4.17.1, express@^4.17.2:
   version "4.17.2"
   resolved "https://registry.npmjs.org/express/-/express-4.17.2.tgz"
   integrity sha512-oxlxJxcQlYwqPWKVJJtvQiwHgosH/LrLSPA+H4UxpyvSS6jC5aH+5MoHFM+KABgTOt0APue4w66Ha8jCUo9QGg==
@@ -8584,6 +8584,13 @@ serialize-javascript@^6.0.0:
   integrity sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag==
   dependencies:
     randombytes "^2.1.0"
+
+serve-build@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/serve-build/-/serve-build-0.1.0.tgz#7ac079bcda3361ef8df02bf93e5dc9ec248a904c"
+  integrity sha1-esB5vNozYe+N8Cv5Pl3J7CSKkEw=
+  dependencies:
+    express "^4.16.2"
 
 serve-index@^1.9.1:
   version "1.9.1"

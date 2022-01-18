@@ -11,7 +11,7 @@ import mySelf from '../images/myself.jpeg';
 import '../styles/global.scss'
 import '../styles/media.scss'
 
-import { FormEvent, useState, useEffect } from 'react';
+import { FormEvent, useState } from 'react';
 import { Button } from '../components/button'
 
 
