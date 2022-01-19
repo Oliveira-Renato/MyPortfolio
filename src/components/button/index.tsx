@@ -1,6 +1,6 @@
 import './style.scss'
-
 import { useEffect } from 'react';
+
 
 export function Button(){
 
@@ -30,6 +30,7 @@ export function Button(){
 
   
   return (
-    <button className="submit-button"><span className="pre-state-msg">Enviar</span><span className="current-state-msg hide">Enviando...</span><span className="done-state-msg hide">Pronto!</span></button>
+    <button className="submit-button"><span className="pre-state-msg">Enviar</span><span className="current-state-msg hide">Enviando...</span><span className="done-state-msg hide">Pronto!</span>
+    </button>
   )
 }
