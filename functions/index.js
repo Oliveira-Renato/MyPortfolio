@@ -1,3 +1,4 @@
+const functions = require("firebase-functions");
 //file called server.js and first load the required dependencies:
 const express = require("express");
 const router = express.Router();
@@ -15,8 +16,8 @@ app.listen(5000, () => console.log("Server Running"));
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "@gmail.com",
-    pass: "",
+    user: "asdsdasdas@gmail.com",
+    pass: "rsadsad",
   },
 });
 
