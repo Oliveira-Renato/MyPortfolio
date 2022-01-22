@@ -22,6 +22,36 @@ import { useForm } from '@formspree/react';
 export function Home(){
     const [state, handleSubmit] = useForm("mgedorwa");
 
+    try{
+        if(!state.succeeded) {
+            toast.error("Oops, Algo deu errado!", 
+            {
+                icon: '😱',
+                style: {
+                  width: '300px',
+                  background: '#333',
+                  color: '#fff',
+                  fontSize: '1.6em',
+                },
+              })
+              
+        }else{
+            toast.success('Enviado com sucesso!',
+            {
+                icon: '👍',
+                style: {
+                    background: '#00bcd4',
+                    color: '#fff',
+                    width: '300px',
+                    fontSize: '1.6em',
+                },
+              })
+        }
+
+    }catch (err) {
+        console.log(err)
+    }
+
      // if (state.succeeded) {
   //     return <p>Thanks for joining!</p>;
   // }
@@ -193,7 +223,7 @@ export function Home(){
                         <a href="#" onClick={ toggleMenu }>Projetos</a>
                     </li>
                     <li>
-                        <a href="#cantact" onClick={ toggleMenu }>Contato</a>
+                        <a href="#contact" onClick={ toggleMenu }>Contato</a>
                     </li>
                 </ul>
             </div>
