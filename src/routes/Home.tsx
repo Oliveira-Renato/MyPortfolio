@@ -10,64 +10,21 @@ import mySelf from '../images/myself.jpeg';
 
 import '../styles/global.scss'
 import '../styles/media.scss'
-ContactForm
 
-import { FormEvent, useState } from 'react';
-import { Button } from '../components/button'
-import  {ContactForm}  from '../components/forms/ContactForm'
+
+
+import { Button } from '../components/button';
 
 import toast, { Toaster } from 'react-hot-toast';
 import { useForm } from '@formspree/react';
 
 
 export function Home(){
-    
-    const [state, handleSubmit] = useForm("mgedorwa");;
+    const [state, handleSubmit] = useForm("mgedorwa");
 
-    
-       
-    try{
-        if(state.succeeded) {
-            toast.error("Oops, Algo deu errado!", 
-            {
-                icon: '😱',
-                style: {
-                  width: '300px',
-                  background: '#333',
-                  color: '#fff',
-                  fontSize: '1.6em',
-                },
-              })
-             
-        }else{
-            toast.success('Enviado com sucesso!',
-            {
-                icon: '👍',
-                style: {
-                    background: '#00bcd4',
-                    color: '#fff',
-                    width: '300px',
-                    fontSize: '1.6em',
-                },
-              })
-        }
-
-       }catch (err) {
-           console.log(err)
-       }
-        
-        
-        // //código temporário, preciso resolver como fazer isso de maneira mais elegante
-        var campos= document.querySelectorAll('input')
-        var textArea= document.querySelectorAll('textarea')
-
-        for (let i = 0;i <= campos.length-1; i++) {
-              campos[i].value = '';     
-           }
-        if(textArea[0].value != '') {
-              textArea[0].value = '';
-        }
-    
+     // if (state.succeeded) {
+  //     return <p>Thanks for joining!</p>;
+  // }
 
   return (
     
@@ -123,8 +80,8 @@ export function Home(){
 
             {/* Sessão de habilidades */}
             <section className="skills" id="skills">
-                <div className="title">
-                <h2 >Minhas Habilidades</h2>
+                <div className="title black">
+                <h2>Minhas Habilidades</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
                     <div className="skills-content">
@@ -178,12 +135,46 @@ export function Home(){
             </section>
 
             {/* Formulario Contato */}
-            <section onSubmit={handleSubmit} id="cantact">
+            <section className="contact" id="contact">
                 <div className="title white">
                     <h2>Entre em Contato</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
                 </div>
-                <ContactForm />
+                <form onSubmit={ handleSubmit } id='main-form'>
+                    <div className="contactForm">
+                        <div className="row">
+                            <div className="col50">
+                                <label htmlFor="name"></label>
+                                <input type="text" id="name" name="name" placeholder="Primeiro Nome"  />
+                            </div>
+                            <div className="col50">
+                                <label htmlFor="lastname"></label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col50">
+                                <label htmlFor="email"></label>
+                                <input type="text" id="email" name="email" placeholder="Email" />
+                            </div>
+                            <div className="col50">
+                                <label htmlFor="subject"></label>
+                                <input type="text" id="subject" name="subject" placeholder="Assunto"   />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col100">
+                                <label htmlFor="message"></label>
+                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div className="row">
+                    <div className="col100 btn-da-massa">
+                        <Button />
+                    </div>
+                </div>
             </section>
             
             {/* <-----------Opções do menu ----------------> */}

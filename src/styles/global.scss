@@ -243,13 +243,19 @@ p {
     }
   }
 
-  &.white h2, .title.white p {
-      color: #fff;
+  &.black p {
+    color:#333;
   }
 
+  &.white h2, p {
+      color: #fff;
+   
+  }
   &.white h2::before {
       background: #fff;
   }
+
+
 }
 
 

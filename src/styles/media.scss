@@ -11,7 +11,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   html {
     font-size: 55.5%;
   }
@@ -184,7 +184,34 @@
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 420px){
+  .sidebar ul li a {
+    font-size: 2.5em;
+  }
+  .submit-button {
+    font-size: 2.2rem;
+  }
+  .contact .contactForm .row input, .contact .contactForm .row textarea {
+    font-size: 2.5rem;
+  }
+  span {
+    font-weight: 500;
+    font-size: 2.5rem;
+  }
+  .skills .skills-content .left .text {
+    font-size: 2.5rem;
+  }
+  .btn {
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    margin-top: 29px;
+  }
+  html {
+      font-size: 45%;
+    }
+}
+
+@media (max-width: 360px) {
   html {
     font-size: 38.5%;
   }
