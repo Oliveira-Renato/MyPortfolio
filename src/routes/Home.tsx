@@ -9,48 +9,110 @@ import mySelf from '../images/myself.jpeg';
 
 
 import '../styles/global.scss'
-import '../styles/media.scss'
-
-
-
+import '../styles/media.scss';
 import { Button } from '../components/button';
 
 import toast, { Toaster } from 'react-hot-toast';
+import { FormEvent, useState } from 'react';
 import { useForm } from '@formspree/react';
 
 
+type InputsContent = {
+    name?: string | undefined,
+    lastname?:string| undefined,
+    email?: string | undefined,
+    subject?: string| undefined,
+    message?: string| undefined
+}
+
+
+
 export function Home(){
-    const [state, handleSubmit] = useForm("mgedorwa");
+    const [inputs, setInputs] = useState<InputsContent[]>([]);
 
-    try{
-        if(!state.succeeded) {
-            toast.error("Oops, Algo deu errado!", 
-            {
-                icon: '😱',
-                style: {
-                  width: '300px',
-                  background: '#333',
-                  color: '#fff',
-                  fontSize: '1.6em',
-                },
-              })
-              
-        }else{
-            toast.success('Enviado com sucesso!',
-            {
-                icon: '👍',
-                style: {
-                    background: '#00bcd4',
-                    color: '#fff',
-                    width: '300px',
-                    fontSize: '1.6em',
-                },
-              })
-        }
+    const HandleCleanInputs = () => {
+        // //código temporário, preciso resolver como fazer isso de maneira mais elegante
+         var campos= document.querySelectorAll('input')
+         var textArea= document.querySelectorAll('textarea')
 
-    }catch (err) {
-        console.log(err)
+         for (let i = 0;i <= campos.length-1; i++) {
+                 campos[i].value = '';     
+             }
+         if(textArea[0].value != '') {
+                 textArea[0].value = '';
+         }
+
+         setInputs([])
     }
+
+
+    function HandleInputChange(event: any) {
+        inputs[event.target.name] = event.target.value;
+
+        setInputs(inputs)
+    }
+ 
+
+    async function HandleSubmitForm(e: FormEvent){
+        e.preventDefault()
+
+        const data = Object.entries(inputs).map(([key,value]) =>{ 
+            return {
+                [key]: value,
+            }
+        })
+    
+       const dataObj:object = {
+            name: data[0]?.name,
+            lastname: data[1]?.lastname,
+            email: data[2]?.email,
+            subject: data[3]?.subject,
+            message: data[4]?.message   
+       }
+       console.log(dataObj)
+       try{
+           let response = await fetch("https://formspree.io/f/mgedorwa", {
+               method: "POST",
+               headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+                body: JSON.stringify(dataObj),
+           });
+
+           let result = await response.json()
+           if(result.ok){
+                toast.success('Enviado com sucesso!',
+                {
+                    icon: '👍',
+                    style: {
+                        background: '#00bcd4',
+                        color: '#fff',
+                        width: '300px',
+                        fontSize: '1.6em',
+                    },
+                })
+
+                HandleCleanInputs()
+           }else{
+                toast.error("Oops, Algo deu errado!", 
+                {
+                    icon: '😱',
+                    style: {
+                    width: '300px',
+                    background: '#EF2A2A',
+                    color: '#fff',
+                    fontSize: '1.6em',
+                    },
+                })
+
+                HandleCleanInputs()
+           }
+       }catch(err){
+            console.log("ERRO: ", err)
+       }        
+
+    }
+    
 
      // if (state.succeeded) {
   //     return <p>Thanks for joining!</p>;
@@ -170,41 +232,42 @@ export function Home(){
                     <h2>Entre em Contato</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
                 </div>
-                <form onSubmit={ handleSubmit } id='main-form'>
+                <form onSubmit={ HandleSubmitForm } id='main-form'>
                     <div className="contactForm">
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="name"></label>
-                                <input type="text" id="name" name="name" placeholder="Primeiro Nome"  />
+                                <input type="text" id="name" name="name" placeholder="Primeiro Nome"  onChange={HandleInputChange} required/>
                             </div>
                             <div className="col50">
                                 <label htmlFor="lastname"></label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" />
+                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" onChange={HandleInputChange} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" id="email" name="email" placeholder="Email" />
+                                <input type="text" id="email" name="email" placeholder="Email"  onChange={HandleInputChange} required />
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
-                                <input type="text" id="subject" name="subject" placeholder="Assunto"   />
+                                <input type="text" id="subject" name="subject" placeholder="Assunto" onChange={HandleInputChange} required />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
                                 <label htmlFor="message"></label>
-                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." ></textarea>
+                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." onChange={HandleInputChange} required ></textarea>
                             </div>
                         </div>
                     </div>
-                </form>
-                <div className="row">
-                    <div className="col100 btn-da-massa">
-                        <Button />
+                
+                    <div className="row">
+                        <div className="col100 btn-da-massa">
+                            <Button />
+                        </div>
                     </div>
-                </div>
+                </form>
             </section>
             
             {/* <-----------Opções do menu ----------------> */}
