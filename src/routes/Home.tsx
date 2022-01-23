@@ -8,11 +8,12 @@ import instaImg from '../images/instaImg.png';
 import mySelf from '../images/myself.jpeg';
 
 
-import '../styles/global.scss'
+import '../styles/global.scss';
 import '../styles/media.scss';
 import { Button } from '../components/button';
 
 import toast, { Toaster } from 'react-hot-toast';
+
 import { FormEvent, useState } from 'react';
 import { useForm } from '@formspree/react';
 
@@ -21,8 +22,8 @@ type InputsContent = {
     name?: string | undefined,
     lastname?:string| undefined,
     email?: string | undefined,
-    subject?: string| undefined,
-    message?: string| undefined
+    subject?: string | undefined,
+    message?: string | undefined
 }
 
 
@@ -69,7 +70,8 @@ export function Home(){
             subject: data[3]?.subject,
             message: data[4]?.message   
        }
-       console.log(dataObj)
+        
+
        try{
            let response = await fetch("https://formspree.io/f/mgedorwa", {
                method: "POST",
@@ -79,7 +81,8 @@ export function Home(){
                 body: JSON.stringify(dataObj),
            });
 
-           let result = await response.json()
+           let result = await response.json();
+           
            if(result.ok){
                 toast.success('Enviado com sucesso!',
                 {
@@ -92,7 +95,8 @@ export function Home(){
                     },
                 })
 
-                HandleCleanInputs()
+                HandleCleanInputs();
+               
            }else{
                 toast.error("Oops, Algo deu errado!", 
                 {
@@ -108,15 +112,12 @@ export function Home(){
                 HandleCleanInputs()
            }
        }catch(err){
-            console.log("ERRO: ", err)
+            console.log("ERRO: " + err)
        }        
 
     }
     
 
-     // if (state.succeeded) {
-  //     return <p>Thanks for joining!</p>;
-  // }
 
   return (
     
@@ -237,27 +238,27 @@ export function Home(){
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="name"></label>
-                                <input type="text" id="name" name="name" placeholder="Primeiro Nome"  onChange={HandleInputChange} required/>
+                                <input type="text" id="name" name="name" placeholder="Primeiro Nome"  onChange={ HandleInputChange } required/>
                             </div>
                             <div className="col50">
                                 <label htmlFor="lastname"></label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" onChange={HandleInputChange} />
+                                <input type="text" id="lastname" name="lastname" placeholder="Sobrenome" onChange={ HandleInputChange } />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col50">
                                 <label htmlFor="email"></label>
-                                <input type="text" id="email" name="email" placeholder="Email"  onChange={HandleInputChange} required />
+                                <input type="text" id="email" name="email" placeholder="Email"  onChange={ HandleInputChange } required />
                             </div>
                             <div className="col50">
                                 <label htmlFor="subject"></label>
-                                <input type="text" id="subject" name="subject" placeholder="Assunto" onChange={HandleInputChange} required />
+                                <input type="text" id="subject" name="subject" placeholder="Assunto" onChange={ HandleInputChange } required />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col100">
                                 <label htmlFor="message"></label>
-                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." onChange={HandleInputChange} required ></textarea>
+                                <textarea name='message' id="message" placeholder="Digite sua mensagem aqui..." onChange={ HandleInputChange } required ></textarea>
                             </div>
                         </div>
                     </div>
