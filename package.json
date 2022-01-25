@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "firebase": "^9.6.1",
+    "jquery": "^3.6.0",
     "node-sass": "^7.0.0",
     "nodemailer": "^6.7.2",
     "react": "^17.0.2",
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.13"
   }
 }

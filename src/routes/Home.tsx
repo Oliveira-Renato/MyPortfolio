@@ -1,4 +1,4 @@
-import { toggleMenu } from '../components/Toggle';
+import { toggleMenu } from '../components/toggle/Toggle';
 
 import homeImg from '../images/homeImg.jpg';
 import aboutImg from '../images/aboutImg.jpg';
@@ -11,6 +11,7 @@ import mySelf from '../images/myself.jpeg';
 import '../styles/global.scss';
 import '../styles/media.scss';
 import { Button } from '../components/button';
+import { Projects } from '../components/projects';
 
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -229,7 +230,24 @@ export function Home(){
                     </div>
             </section>
             {/* Sessão Projetos */}
-            
+            <Projects />
+            {/* <section className="project" id="project">
+            <div className="title black">
+                <h2>Meus Projetos</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
+                </div>
+                <div className="container">
+                <div className="carousel">
+                    <div className="item a">A</div>
+                    <div className="item b">B</div>
+                    <div className="item c">C</div>
+                    <div className="item d">D</div>
+                </div>
+                </div>
+                <div className="next">Next</div>
+                <div className="prev">Prev</div>
+            </section> */}
+
             {/* Formulario Contato */}
             <section className="contact" id="contact">
                 <div className="title white">
@@ -287,7 +305,7 @@ export function Home(){
                         <a href="#skills" onClick={ toggleMenu }>Habilidades</a>
                     </li>
                     <li>
-                        <a href="#" onClick={ toggleMenu }>Projetos</a>
+                        <a href="#project" onClick={ toggleMenu }>Projetos</a>
                     </li>
                     <li>
                         <a href="#contact" onClick={ toggleMenu }>Contato</a>
