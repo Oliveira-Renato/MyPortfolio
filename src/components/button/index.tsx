@@ -1,32 +1,51 @@
 import './style.scss'
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 
 export function Button(){
 
+  
   useEffect(() => {
     const button:any = document.querySelector('.submit-button')
-    
-    const updateButtonMsg: any = () => {
-      button.classList.add('state-1', 'animated');
-      
-      setTimeout(finalButtonMsg, 2000);
-    }
+    const inputs:any = document.querySelectorAll('input')
+    const message:any = document.querySelectorAll('textarea')
 
-      const finalButtonMsg: any = function() {
-        button.classList.add('state-2', 'animated');
 
-        setTimeout(setInitialButtonState, 2000);
-      };
-
-      const setInitialButtonState: any = function() {
-        button.classList.remove('state-1', 'state-2', 'animated')
+      function updateButtonMsg() {
+        button.classList.add('state-1', 'animated');
+        
+        setTimeout(finalButtonMsg, 2000);
       }
-      
-      button.addEventListener('click',function(){
-        updateButtonMsg()
-      })
+  
+        function finalButtonMsg() {
+          button.classList.add('state-2', 'animated');
+  
+          setTimeout(setInitialButtonState, 2000);
+        };
+  
+        function setInitialButtonState() {
+          button.classList.remove('state-1', 'state-2', 'animated')
+        } 
+        
+        button.addEventListener('click',function(){
+          if(inputs[0].value != '' && inputs[2].value != '' && message[0].value){
+            updateButtonMsg()
+          }else{
+            toast.error("Preencha os campos primeiro!", 
+                {
+                    icon: '⚠️',
+                    style: {
+                    width: '300px',
+                    background: 	'#FF8C00',
+                    color: '#fff',
+                    fontSize: '1.6em',
+                    },
+                })
+          }
+        })
   }) 
+  
 
   
   return (

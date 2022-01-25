@@ -84,16 +84,18 @@ export function Home(){
            let result = await response.json();
            
            if(result.ok){
-                toast.success('Enviado com sucesso!',
-                {
-                    icon: '👍',
-                    style: {
-                        background: '#00bcd4',
-                        color: '#fff',
-                        width: '300px',
-                        fontSize: '1.6em',
-                    },
-                })
+                setTimeout(function(){
+                    toast.success('Enviado com sucesso!',
+                    {
+                        icon: '👍',
+                        style: {
+                            background: '#00bcd4',
+                            color: '#fff',
+                            width: '300px',
+                            fontSize: '1.6em',
+                        },
+                    })
+                },2000)
 
                 HandleCleanInputs();
                
