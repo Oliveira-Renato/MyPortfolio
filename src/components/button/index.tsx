@@ -29,7 +29,7 @@ export function Button(){
         } 
         
         button.addEventListener('click',function(){
-          if(inputs[0].value != '' && inputs[2].value != '' && message[0].value){
+          if(inputs[0].value != '' && inputs[2].value != ''  && inputs[3].value != '' && message[0].value != ''){
             updateButtonMsg()
           }else{
             toast.error("Preencha os campos primeiro!", 
