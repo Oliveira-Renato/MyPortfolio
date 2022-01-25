@@ -47,6 +47,14 @@
           transform: rotateY(180deg) translateZ(250px);
           background: #f26522;
         }
+        &.e {
+          transform: rotateY(240deg) translateZ(250px);
+          background: #630460;
+        } 
+        &.f {
+          transform: rotateY(300deg) translateZ(250px);
+          background: #8c6239;
+        }
       }
     }
   }
