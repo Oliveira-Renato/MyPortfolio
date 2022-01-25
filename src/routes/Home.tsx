@@ -228,7 +228,8 @@ export function Home(){
                         </div>
                     </div>
             </section>
-
+            {/* Sessão Projetos */}
+            
             {/* Formulario Contato */}
             <section className="contact" id="contact">
                 <div className="title white">
