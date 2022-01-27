@@ -69,14 +69,17 @@
     border-top: 1px solid #FFF;
     box-shadow: 0 5px 0 #999;
     transition: box-shadow 0.1s, top 0.1s;
+
+    &.next:hover, +.prev:hover { color: #000; }
+    &.next:active, +.prev:active {
+      
+      box-shadow: 0 1px 0 #999;
+    }
   }
-  .next:hover, .prev:hover { color: #000; }
-  .next:active, .prev:active {
-    top: 104px;
-    box-shadow: 0 1px 0 #999;
-  }
+  
   .next { right: 5em; }
   .prev { left: 5em; }
+
 }
 
 

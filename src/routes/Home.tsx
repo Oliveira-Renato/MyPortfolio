@@ -11,12 +11,11 @@ import mySelf from '../images/myself.jpeg';
 import '../styles/global.scss';
 import '../styles/media.scss';
 import { Button } from '../components/button';
-import { Projects } from '../components/projects';
+import {Projects} from '../components/projects'
 
 import toast, { Toaster } from 'react-hot-toast';
 
 import { FormEvent, useState } from 'react';
-import { useForm } from '@formspree/react';
 
 
 type InputsContent = {

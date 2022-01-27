@@ -1,41 +1,29 @@
 import './style.scss';
-import $ from 'jquery';
-import { useState, useEffect } from 'react';
+import $ from "jquery";
 
 export function Projects(){
-  const [item, setItem] = useState('');
-  var nextBtn: any= document.querySelector('.next');
-
-   useEffect(()=>{
-    var carousel: any =$(".carousel"),currdeg  = 0;
-
-    // $(".next").on("click", { d: "n" }, rotate);
-    // $(".prev").on("click", { d: "p" }, rotate);
-
-    function rotate(e: any){
-      console.log(e)
-      if(e.data.d=="n"){
-        currdeg = currdeg - 60;
-      }
+    var carousel: any = $(".carousel"), currdeg: number  = 0;
+  
+    function rotate(){
       
-      if(e.data.d=="p"){
-        currdeg = currdeg + 60;
-
-      }
-
       carousel.css({
-        "-webkit-transform": "rotateY("+currdeg+"deg)",
-        "-moz-transform": "rotateY("+currdeg+"deg)",
-        "-o-transform": "rotateY("+currdeg+"deg)",
-        "transform": "rotateY("+currdeg+"deg)"
-      });
+          "-webkit-transform": "rotateY("+currdeg+"deg)",
+          "-moz-transform": "rotateY("+currdeg+"deg)",
+          "-o-transform": "rotateY("+currdeg+"deg)",
+          "transform": "rotateY("+currdeg+"deg)"
+        });
     }
-
-    nextBtn.addEventListener('click',function(){
-      console.log('salve')
-    })
-   })
-
+    
+    function hantdleTurnRight(e:any){
+      currdeg = currdeg - 60;
+      rotate()
+    }
+    function hantdleTurnLeft(e:any){
+      currdeg = currdeg + 60;
+      rotate()
+    }
+  
+  
 
   return (
     <section className="project" id="project">
@@ -53,8 +41,8 @@ export function Projects(){
               <div className="item f">F</div>
           </div>
         </div>
-        <div className="next">Next</div>
-        <div  className="prev">Prev</div>
+        <button className="next" onClick={hantdleTurnRight}>Next</button>
+        <button className="prev" onClick={hantdleTurnLeft}>Prev</button>
     </section>
-  )//rotate({d:'n'})
+  )
 }
