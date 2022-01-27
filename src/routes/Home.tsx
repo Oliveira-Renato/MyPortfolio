@@ -230,7 +230,7 @@ export function Home(){
             </section>
 
             {/* Sessão Projetos */}
-            div.
+
             <Projects />
             
             {/* Formulario Contato */}

@@ -1,9 +1,27 @@
 /*Corrigindo a exibição em telas menores*/
-@media (max-width: 2000px) {
+@media (max-width: 5000) {
   html {
     font-size: 78.5%;
   }
+  .project .main-container {
+    margin-top: 2rem;
+  }
+  .project .container-project .carousel .item.a {
+    transform: rotateY(0deg) translateZ(160px);
+  }
+
+  .project .container-project .carousel .item {
+    width: 250px;
+    height: 300px;
+    line-height: 200px;
+    font-size: 5em;
+    text-align: center;
+    color: #FFF;
+    opacity: 0.95;
+    border-radius: 10px;
+  } 
 }
+
 
 @media (max-width: 1500px) {
   html {
