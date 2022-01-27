@@ -14,35 +14,33 @@ export function Projects(){
         });
     }
     
-    function hantdleTurnRight(e:any){
+    function handleTurnRight(e:any){
       currdeg = currdeg - 60;
       rotate()
     }
-    function hantdleTurnLeft(e:any){
+    function handleTurnLeft(e:any){
       currdeg = currdeg + 60;
       rotate()
     }
-  
-  
 
   return (
     <section className="project" id="project">
       <div className="title black">
         <h2>Meus Projetos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
+      </div>
+      <div className="container-project">
+        <div className="carousel">
+            <div className="item a">A</div>
+            <div className="item b">B</div>
+            <div className="item c">C</div>
+            <div className="item d">D</div>
+            <div className="item e">E</div>
+            <div className="item f">F</div>
         </div>
-        <div className="container-project">
-          <div className="carousel">
-              <div className="item a">A</div>
-              <div className="item b">B</div>
-              <div className="item c">C</div>
-              <div className="item d">D</div>
-              <div className="item e">E</div>
-              <div className="item f">F</div>
-          </div>
-        </div>
-        <button className="next" onClick={hantdleTurnRight}>Next</button>
-        <button className="prev" onClick={hantdleTurnLeft}>Prev</button>
+      </div>
+      <button className="next" onClick={ handleTurnRight } >Next</button>
+      <button className="prev" onClick={ handleTurnLeft } >Prev</button>
     </section>
   )
 }
