@@ -126,7 +126,7 @@ export function Home(){
     <div>
         <div><Toaster/></div>
         <div className="toggle" onClick={toggleMenu}></div>
-         {/*pagina inicial*/}
+            {/*pagina inicial*/}
             <section className="banner" id="home">
                 <div className="imgSidebar">
                     <img src={ homeImg } alt='Logo home'/>
@@ -176,8 +176,8 @@ export function Home(){
             {/* Sessão de habilidades */}
             <section className="skills" id="skills">
                 <div className="title black">
-                <h2>Minhas Habilidades</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <h2>Minhas Habilidades</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
                     <div className="skills-content">
                         <div className="column left">
@@ -228,25 +228,11 @@ export function Home(){
                         </div>
                     </div>
             </section>
-            {/* Sessão Projetos */}
-            <Projects />
-            {/* <section className="project" id="project">
-            <div className="title black">
-                <h2>Meus Projetos</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
-                </div>
-                <div className="container">
-                <div className="carousel">
-                    <div className="item a">A</div>
-                    <div className="item b">B</div>
-                    <div className="item c">C</div>
-                    <div className="item d">D</div>
-                </div>
-                </div>
-                <div className="next">Next</div>
-                <div className="prev">Prev</div>
-            </section> */}
 
+            {/* Sessão Projetos */}
+            div.
+            <Projects />
+            
             {/* Formulario Contato */}
             <section className="contact" id="contact">
                 <div className="title white">
