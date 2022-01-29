@@ -34,8 +34,22 @@
             border-radius: 10px;
     
             &.a {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .0);
               transform: rotateY(0deg) translateZ(250px);
-              background: #ed1c24;
+              background-image: url("./images/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+              &:hover{
+                opacity: 1;
+                transition-duration: 0.5s;
+                transform: scale(150%);
+                cursor: pointer;
+                background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+              
+              }
             }
             &.b {
               transform: rotateY(60deg) translateZ(250px);

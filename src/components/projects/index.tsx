@@ -3,16 +3,21 @@ import '../../styles/global.scss'
 import './style.scss';
 import $ from "jquery";
 
+/*importação de imagens */
+import  letmeAskImg  from "./images/letmeask/letmeaskmobi.jpeg"
+
 export function Projects(){
     var carousel: any = $(".carousel"), currdeg: number  = 0;
   
     function rotate(){
       console.log('deixa com pai')
-      carousel.css({
-          "-webkit-transform": "rotateY("+currdeg+"deg)",
-          "-moz-transform": "rotateY("+currdeg+"deg)",
-          "-o-transform": "rotateY("+currdeg+"deg)",
-          "transform": "rotateY("+currdeg+"deg)"
+      console.log(currdeg);
+
+     carousel.css({
+          "-webkit-transform": "rotateY("+ currdeg +"deg)",
+          "-moz-transform": "rotateY("+ currdeg +"deg)",
+          "-o-transform": "rotateY("+ currdeg +"deg)",
+          "transform": "rotateY("+ currdeg +"deg)"
         });
     }
     
@@ -37,7 +42,10 @@ export function Projects(){
       <div className="main-container">
         <div className="container-project">
           <div className="carousel">
-              <div className="item a">A</div>
+            <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
+              <div className="item a"></div>
+            </a>
+              
               <div className="item b">B</div>
               <div className="item c">C</div>
               <div className="item d">D</div>
