@@ -5,10 +5,14 @@ import $ from "jquery";
 
 /*importação de imagens */
 import  letmeAskImg  from "./images/letmeask/letmeaskmobi.jpeg"
+import { useEffect } from 'react';
 
 export function Projects(){
     var carousel: any = $(".carousel"), currdeg: number  = 0;
-  
+
+    useEffect(()=>{
+      $('.a').addClass('lol')
+    })
     function rotate(){
       console.log('deixa com pai')
       console.log(currdeg);
@@ -22,12 +26,22 @@ export function Projects(){
     }
     
     function teste() {
-      
+      switch(currdeg){
+        case -30:
+          $('.a').removeClass('hover');
+          $('.b').addClass('hover');
+          break
+        default:
+          $('.a').addClass('hover');
+          break;
+      }
     }
 
     function handleTurnRight(e: any){
       e.preventDefault();
+
       currdeg = currdeg - 30;
+      teste()
       rotate()
     }
     

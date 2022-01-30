@@ -32,7 +32,30 @@
             color: #FFF;
             opacity: 0.95;
             border-radius: 10px;
+
+            
     
+            &.lol {
+              opacity: 1;
+              //background-color: rgba(0, 0, 0, .0);
+              //transform: rotateY(0deg) translateZ(250px);
+             // background-image: url("./images/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+               &:hover{
+                 opacity: 1;
+                 transition-duration: 0.5s;
+                 transition-delay: 700;
+                  transform: scale(150%);
+                 cursor: pointer;
+                // background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+              
+               }
+            }
+
+
             &.a {
               opacity: 1;
               background-color: rgba(0, 0, 0, .0);
@@ -42,17 +65,7 @@
               background-position: center;
               background-repeat: no-repeat;
 
-              // &:hover{
-              //   opacity: 1;
-              //   transition-duration: 0.5s;
-              //   transition-delay: 700;
-              //   // transform: scale(150%);
-              //   cursor: pointer;
-              //   background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
-              
-              // }
             }
-
             
             &.b {
               opacity: 1;
@@ -84,6 +97,7 @@
       }
 
   }
+
 
   
 
