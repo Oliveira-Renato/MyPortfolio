@@ -42,18 +42,26 @@
               background-position: center;
               background-repeat: no-repeat;
 
-              &:hover{
-                opacity: 1;
-                transition-duration: 0.5s;
-                transform: scale(150%);
-                cursor: pointer;
-                background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+              // &:hover{
+              //   opacity: 1;
+              //   transition-duration: 0.5s;
+              //   transition-delay: 700;
+              //   // transform: scale(150%);
+              //   cursor: pointer;
+              //   background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
               
-              }
+              // }
             }
+
+            
             &.b {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .6);
+              background-image: url("./images/wiki/wiki.png");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
               transform: rotateY(60deg) translateZ(250px);
-              background: #0072bc;
             }
             &.c {
               transform: rotateY(120deg) translateZ(250px);

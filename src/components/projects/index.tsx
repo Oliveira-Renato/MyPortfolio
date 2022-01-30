@@ -21,15 +21,18 @@ export function Projects(){
         });
     }
     
+    function teste() {
+      
+    }
+
     function handleTurnRight(e: any){
-      e.preventDefault()
-      currdeg = currdeg - 60;
+      e.preventDefault();
+      currdeg = currdeg - 30;
       rotate()
     }
     
-    function handleTurnLeft(e:any){
-      e.preventDefault()
-      currdeg = currdeg + 60;
+    function handleTurnLeft(){
+      currdeg = currdeg + 30;
       rotate()
     }
 
@@ -45,12 +48,16 @@ export function Projects(){
             <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
               <div className="item a"></div>
             </a>
-              
-              <div className="item b">B</div>
+            <a className="carousel" href="https://github.com/Oliveira-Renato/me50" target="blank" >
+              <div className="item b"></div>
+            </a>
+            <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
               <div className="item c">C</div>
-              <div className="item d">D</div>
+            </a>
+
+              {/* <div className="item d">D</div>
               <div className="item e">E</div>
-              <div className="item f">F</div>
+              <div className="item f">F</div> */}
           </div>
       </div>
       </div>
