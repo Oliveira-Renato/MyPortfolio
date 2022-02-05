@@ -15,7 +15,7 @@ import { Button } from '../components/button';
 import toast, { Toaster } from 'react-hot-toast';
 
 import { FormEvent, useState } from 'react';
-import { useForm } from '@formspree/react';
+import { useForm } from '@formspree/react'; 
 
 
 type InputsContent = {
