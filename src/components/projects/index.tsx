@@ -2,31 +2,46 @@ import '../../styles/media.scss'
 import '../../styles/global.scss'
 import './style.scss';
 import $ from "jquery";
+import { useEffect } from 'react'
 
-export function Projects(){
-    var carousel: any = $(".carousel"), currdeg: number  = 0;
-  
-    function rotate(){
-      console.log('deixa com pai')
-      carousel.css({
-          "-webkit-transform": "rotateY("+currdeg+"deg)",
-          "-moz-transform": "rotateY("+currdeg+"deg)",
-          "-o-transform": "rotateY("+currdeg+"deg)",
-          "transform": "rotateY("+currdeg+"deg)"
+
+export function Projects(){ 
+    useEffect(function(){
+      var carousel: any = $(".carousel"), rotation: number  = 0;
+      var leftButton: any = document.querySelector('.prev');
+      var rightButton: any = document.querySelector('.next');
+      var rotationValue: number = 60;
+
+
+      function handleRotate(){
+        console.log('deixa com pai')
+        console.log(rotation);
+
+        carousel.css({
+            "-webkit-transform": "rotateY("+ rotation +"deg)",
+            "-moz-transform": "rotateY("+ rotation +"deg)",
+            "-o-transform": "rotateY("+ rotation +"deg)",
+            "transform": "rotateY("+ rotation +"deg)"
         });
-    }
+
+      }
+
+
+      leftButton.addEventListener('click',function(e: any){
+        e.preventDefault()
+
+        rotation += rotationValue
+        handleRotate()
+      })
+      rightButton.addEventListener('click',function(e: any){
+        e.preventDefault()
+
+        rotation -= rotationValue
+        handleRotate()
+      })
+    })
+  
     
-    function handleTurnRight(e: any){
-      e.preventDefault()
-      currdeg = currdeg - 60;
-      rotate()
-    }
-    
-    function handleTurnLeft(e:any){
-      e.preventDefault()
-      currdeg = currdeg + 60;
-      rotate()
-    }
 
   return (
     <section className="project" id="project">
@@ -46,8 +61,8 @@ export function Projects(){
           </div>
       </div>
       </div>
-      <div className="next" onClick={ handleTurnRight }>Next</div>
-      <div className="prev" onClick={ handleTurnLeft }>Prev</div>
+      <div className="next" >Next</div>
+      <div className="prev" >Prev</div>
     </section>
   )
 }
