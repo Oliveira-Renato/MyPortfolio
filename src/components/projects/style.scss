@@ -32,14 +32,49 @@
             color: #FFF;
             opacity: 0.95;
             border-radius: 10px;
+
+            
     
-            &.a {
-              transform: rotateY(0deg) translateZ(250px);
-              background: #ed1c24;
+            &.lol {
+              opacity: 1;
+              //background-color: rgba(0, 0, 0, .0);
+              //transform: rotateY(0deg) translateZ(250px);
+             // background-image: url("./images/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+               &:hover{
+                 opacity: 1;
+                 transition-duration: 0.5s;
+                 transition-delay: 700;
+                  transform: scale(150%);
+                 cursor: pointer;
+                // background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+              
+               }
             }
+
+
+            &.a {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .0);
+              transform: rotateY(0deg) translateZ(250px);
+              background-image: url("./images/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+            }
+            
             &.b {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .6);
+              background-image: url("./images/wiki/wiki.png");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
               transform: rotateY(60deg) translateZ(250px);
-              background: #0072bc;
             }
             &.c {
               transform: rotateY(120deg) translateZ(250px);
@@ -62,6 +97,7 @@
       }
 
   }
+
 
   
 

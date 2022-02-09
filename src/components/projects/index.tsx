@@ -52,12 +52,19 @@ export function Projects(){
       <div className="main-container">
         <div className="container-project">
           <div className="carousel">
-              <div className="item a">A</div>
-              <div className="item b">B</div>
+            <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
+              <div className="item a"></div>
+            </a>
+            <a className="carousel" href="https://github.com/Oliveira-Renato/me50" target="blank" >
+              <div className="item b"></div>
+            </a>
+            <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
               <div className="item c">C</div>
-              <div className="item d">D</div>
+            </a>
+
+              {/* <div className="item d">D</div>
               <div className="item e">E</div>
-              <div className="item f">F</div>
+              <div className="item f">F</div> */}
           </div>
       </div>
       </div>
