@@ -36,7 +36,6 @@
             
     
             &.lol {
-              opacity: 1;
               //background-color: rgba(0, 0, 0, .0);
               //transform: rotateY(0deg) translateZ(250px);
              // background-image: url("./images/letmeask/letmeaskmobi.jpeg");
@@ -45,19 +44,18 @@
               background-repeat: no-repeat;
 
                &:hover{
-                 opacity: 1;
-                 transition-duration: 0.5s;
-                 transition-delay: 700;
-                  transform: scale(150%);
+
+                transition-duration: 0.5s;
+                transition-delay: 700;
+                transform: scale(150%);
                  cursor: pointer;
-                // background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+                //  background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
               
                }
             }
 
 
             &.a {
-              opacity: 1;
               background-color: rgba(0, 0, 0, .0);
               transform: rotateY(0deg) translateZ(250px);
               background-image: url("./images/letmeask/letmeaskmobi.jpeg");
@@ -101,22 +99,59 @@
 
   
 
-  .next, .prev {
-    font-size: 1.6rem;
+  .button {
+    font-size: 2.2rem;
     color: #FFF;
     position: absolute; 
-    padding: 1em 2em;
-    cursor: pointer;
+    padding: 16px 36px;
     background: #333;
-    border-radius: 5px;
-    border-top: 1px solid #FFF;
-    box-shadow: 0 5px 0 #888;
-    transition: box-shadow 0.1s, top 0.1s;
+    border-radius: 4px;
+    transition: all 0.5s;
+    border: none;
 
-    &.next:hover, +.prev:hover { color: #999; }
-    &.next:active, +.prev:active {
-      
-      box-shadow: 0 1px 0 #999;
+    span{
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+
+  }
+
+  .next {
+    span:after{
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    &:hover span {
+      padding-right: 25px;
+    }
+    &:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+  }
+
+  .prev {
+    span:after{
+      content: '\00ab';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: -20px;
+      transition: 0.5s;
+    }
+    &:hover span {
+      padding-left: 25px;
+    }
+    &:hover span:after {
+      opacity: 1;
+      left: 0;
     }
   }
   

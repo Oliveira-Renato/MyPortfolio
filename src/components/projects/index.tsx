@@ -10,11 +10,14 @@ export function Projects(){
       var carousel: any = $(".carousel"), rotation: number  = 0;
       var leftButton: any = document.querySelector('.prev');
       var rightButton: any = document.querySelector('.next');
-      var rotationValue: number = 60;
+      var rotationValue: number = 30;
 
+     
+      // if(rotation === 0){
+        
+      // }else $('.item').removeClass('lol')
 
       function handleRotate(){
-        console.log('deixa com pai')
         console.log(rotation);
 
         carousel.css({
@@ -68,8 +71,8 @@ export function Projects(){
           </div>
       </div>
       </div>
-      <div className="next" >Next</div>
-      <div className="prev" >Prev</div>
+      <button className="next button" ><span>Next</span></button>
+      <button className="prev button" ><span>Prev</span></button>
     </section>
   )
 }
