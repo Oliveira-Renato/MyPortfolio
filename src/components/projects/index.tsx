@@ -5,50 +5,87 @@ import $ from "jquery";
 
 /*importação de imagens */
 import  letmeAskImg  from "./images/letmeask/letmeaskmobi.jpeg"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Projects(){
-    var carousel: any = $(".carousel"), currdeg: number  = 0;
-
+    const vRight: any = document.querySelector('.next');
+    const vLeft: any = document.querySelector('.prev');
+    var currdeg: number  = 0;
+    var [turn, setTurn] = useState($(".carousel"));
+    console.log(turn)
     useEffect(()=>{
-      $('.a').addClass('lol')
+      $('.a').addClass('lol');
+
+       function rotate(){
+         console.log('deixa com pai')
+         console.log(currdeg);
+
+        carousel.css({
+             "-webkit-transform": "rotateY("+ currdeg +"deg)",
+             "-moz-transform": "rotateY("+ currdeg +"deg)",
+             "-o-transform": "rotateY("+ currdeg +"deg)",
+             "transform": "rotateY("+ currdeg +"deg)"
+           });
+       }
+
+      // vRight?.addEventListener('click',function(e:any){
+      //   e.preventDefault();
+      //   console.log('direita')
+      //   currdeg = currdeg - 30;
+      //   rotate()
+      // })
+      $('.next').click(function(e:any){
+        e.preventDefault();
+        
+        console.log('direita')
+        currdeg = currdeg - 30;
+        rotate()
+      })
+
+      vLeft?.addEventListener('click',function(e:any){
+        e.preventDefault();
+        console.log('esquerda')
+        currdeg = currdeg + 30;
+        rotate()
+        
+      })
     })
-    function rotate(){
-      console.log('deixa com pai')
-      console.log(currdeg);
+    // function rotate(){
+    //   console.log('deixa com pai')
+    //   console.log(currdeg);
 
-     carousel.css({
-          "-webkit-transform": "rotateY("+ currdeg +"deg)",
-          "-moz-transform": "rotateY("+ currdeg +"deg)",
-          "-o-transform": "rotateY("+ currdeg +"deg)",
-          "transform": "rotateY("+ currdeg +"deg)"
-        });
-    }
+    //  carousel.css({
+    //       "-webkit-transform": "rotateY("+ currdeg +"deg)",
+    //       "-moz-transform": "rotateY("+ currdeg +"deg)",
+    //       "-o-transform": "rotateY("+ currdeg +"deg)",
+    //       "transform": "rotateY("+ currdeg +"deg)"
+    //     });
+    // }
     
-    function teste() {
-      switch(currdeg){
-        case -30:
-          $('.a').removeClass('hover');
-          $('.b').addClass('hover');
-          break
-        default:
-          $('.a').addClass('hover');
-          break;
-      }
-    }
+    // function teste() {
+    //   switch(currdeg){
+    //     case -30:
+    //       $('.a').removeClass('hover');
+    //       $('.b').addClass('hover');
+    //       break
+    //     default:
+    //       $('.a').addClass('hover');
+    //       break;
+    //   }
+    // }
 
-    function handleTurnRight(e: any){
-      e.preventDefault();
+    // function handleTurnRight(e: any){
+    //   e.preventDefault();
 
-      currdeg = currdeg - 30;
-      teste()
-      rotate()
-    }
+    //   currdeg = currdeg - 30;
+    //   teste()
+    //   rotate()
+    // }
     
-    function handleTurnLeft(){
-      currdeg = currdeg + 30;
-      rotate()
-    }
+    // function handleTurnLeft(){
+    //   currdeg = currdeg + 30;
+    //   rotate()
+    // }
 
   return (
     <section className="project" id="project">
@@ -75,8 +112,8 @@ export function Projects(){
           </div>
       </div>
       </div>
-      <div className="next" onClick={ handleTurnRight }>Next</div>
-      <div className="prev" onClick={ handleTurnLeft }>Prev</div>
+      <button className="next" >Next</button>
+      <button className="prev" >Prev</button>
     </section>
   )
 }
