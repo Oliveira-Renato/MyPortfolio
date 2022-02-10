@@ -75,8 +75,13 @@
               transform: rotateY(60deg) translateZ(250px);
             }
             &.c {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .6);
+              background-image: url("./images/darkSouls/darksouls.png");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
               transform: rotateY(120deg) translateZ(250px);
-              background: #39b54a;
             }
             &.d {
               transform: rotateY(180deg) translateZ(250px);

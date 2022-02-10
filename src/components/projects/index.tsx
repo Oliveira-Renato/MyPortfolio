@@ -61,8 +61,8 @@ export function Projects(){
             <a className="carousel" href="https://github.com/Oliveira-Renato/me50" target="blank" >
               <div className="item b"></div>
             </a>
-            <a className="carousel" href="http://letmeask-now.web.app" target="blank" >
-              <div className="item c">C</div>
+            <a className="carousel" href="https://oliveira-renato.github.io/" target="blank" >
+              <div className="item c"></div>
             </a>
 
               {/* <div className="item d">D</div>
