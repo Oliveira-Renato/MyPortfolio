@@ -1,0 +1,183 @@
+.project {
+
+  background: #00bcd4;
+
+  .main-container{
+      margin: 7rem auto;
+
+      .container-project {
+        margin: 0 auto;
+        width: 25rem;
+        height: 20rem;
+        position: relative;
+        perspective: 1000px;
+    
+        .carousel {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transition: transform 1s;
+    
+    
+          .item {
+            display: block;
+            position: absolute;
+            background: #000;
+            width: 26rem;
+            height: 30rem;
+            line-height: 200px;
+            font-size: 5em;
+            text-align: center;
+            color: #FFF;
+            opacity: 0.95;
+            border-radius: 10px;
+
+            
+    
+            &.lol {
+              //background-color: rgba(0, 0, 0, .0);
+              //transform: rotateY(0deg) translateZ(250px);
+             // background-image: url("./images/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+               &:hover{
+
+                transition-duration: 0.5s;
+                transition-delay: 700;
+                transform: scale(150%);
+                 cursor: pointer;
+                //  background-image: url("./images/letmeask/letmeaskmobiblack.jpeg");
+              
+               }
+            }
+
+
+            &.a {
+              background-color: rgba(0, 0, 0, .0);
+              transform: rotateY(0deg) translateZ(250px);
+              background-image: url("../../assets/images_projects/letmeask/letmeaskmobi.jpeg");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+
+            }
+            
+            &.b {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .6);
+              background-image: url("../../assets/images_projects/wiki/wiki.png");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+              transform: rotateY(60deg) translateZ(250px);
+            }
+            &.c {
+              opacity: 1;
+              background-color: rgba(0, 0, 0, .6);
+              background-image: url("../../assets/images_projects/darkSouls/darksouls.png");
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+              transform: rotateY(120deg) translateZ(250px);
+            }
+            &.d {
+              transform: rotateY(180deg) translateZ(250px);
+              background: #f26522;
+            }
+            &.e {
+              transform: rotateY(240deg) translateZ(250px);
+              background: #630460;
+            } 
+            &.f {
+              transform: rotateY(300deg) translateZ(250px);
+              background: #8c6239;
+            }
+          }
+        }
+      }
+
+  }
+
+
+  
+
+  .button {
+    font-size: 2.2rem;
+    color: #FFF;
+    position: absolute; 
+    padding: 16px 36px;
+    background: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+    border: none;
+
+    span{
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+
+  }
+
+  .next {
+    span:after{
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    &:hover span {
+      padding-right: 25px;
+    }
+    &:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+  }
+
+  .prev {
+    span:after{
+      content: '\00ab';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: -20px;
+      transition: 0.5s;
+    }
+    &:hover span {
+      padding-left: 25px;
+    }
+    &:hover span:after {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
+  .next { right: 5em; }
+  .prev { left: 5em; }
+
+}
+
+
+
+
+
+
+
+
+// .e {
+//   transform: rotateY(240deg) translateZ(250px);
+//   background: #630460;
+// } 
+// .f {
+//   transform: rotateY(300deg) translateZ(250px);
+//   background: #8c6239;
+// }
+
