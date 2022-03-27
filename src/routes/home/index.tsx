@@ -6,6 +6,7 @@ import homeImg from '../../assets/images/homeImg.jpg';
 import LinkedinImg from '../../assets/images/LinkedinImg.png';
 import githubImg from '../../assets/images/githubImg.png'
 import instaImg from '../../assets/images/instaImg.png';
+import logo from '../../assets/images/logo.png';
 
 
 
@@ -18,6 +19,8 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import { FormEvent, useState } from 'react';
 import { Skills } from '../skills';
+import HeaderContent from '../../components/header';
+import HeaderComponent from '../../components/header';
 
 
 type InputsContent = {
@@ -127,15 +130,17 @@ export function Home(){
     
     <div>
         <div><Toaster/></div>
-
-        <div className="toggle" onClick={toggleMenu}></div>
+        
+        <HeaderComponent />
             {/*pagina inicial*/}
             <section className="banner" id="home">
                 <div className="imgSidebar">
                     <img src={ homeImg } alt='Logo home'/>
                 </div>
                 <div className="contentBox">
-                    <h5 className="logoText">Meu_Portfolio</h5>
+                    <h5 className="logoText">
+                        <img src={logo} alt="" />
+                    </h5>
                     <div>
                         <h4><span>Olá</span>, meu nome é</h4>
                         <h2>Renato Oliveira</h2>
