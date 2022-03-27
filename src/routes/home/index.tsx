@@ -1,21 +1,23 @@
-import { toggleMenu } from '../components/toggle/Toggle';
+import { toggleMenu } from '../../components/toggle/Toggle';
 
-import homeImg from '../images/homeImg.jpg';
-import aboutImg from '../images/aboutImg.jpg';
-import LinkedinImg from '../images/LinkedinImg.png';
-import githubImg from '../images/githubImg.png'
-import instaImg from '../images/instaImg.png';
-import mySelf from '../images/myself.jpeg';
+import { AboutMe } from '../../routes/aboutMe/index'
+ 
+import homeImg from '../../assets/images/homeImg.jpg';
+import LinkedinImg from '../../assets/images/LinkedinImg.png';
+import githubImg from '../../assets/images/githubImg.png'
+import instaImg from '../../assets/images/instaImg.png';
 
 
-import '../styles/global.scss';
-import '../styles/media.scss';
-import { Button } from '../components/button';
-import {Projects} from '../components/projects'
+
+import '../../styles/global.scss';
+import '../../styles/media.scss';
+import { Button } from '../../components/button';
+import {Projects} from '../projects'
 
 import toast, { Toaster } from 'react-hot-toast';
 
 import { FormEvent, useState } from 'react';
+import { Skills } from '../skills';
 
 
 type InputsContent = {
@@ -125,6 +127,7 @@ export function Home(){
     
     <div>
         <div><Toaster/></div>
+
         <div className="toggle" onClick={toggleMenu}></div>
             {/*pagina inicial*/}
             <section className="banner" id="home">
@@ -156,78 +159,11 @@ export function Home(){
                 </div>   
             </section>
 
-            {/* Sessão Sobre */}
-            <section className="about" id="about">
-                <div className="title white">
-                    <h2>Sobre mim</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div className="content">
-                    <div className="textBx">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus amet in voluptatem cupiditate voluptatibus dignissimos rem perspiciatis. Nulla tempore rerum quasi voluptates quos quod eveniet consequuntur! Magnam, fugit excepturi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa enim quisquam magnam at libero voluptate recusandae eveniet labore architecto dolore consequatur accusantium doloremque fugiat veniam perferendis ab eum, quos maxime!<br/><br/>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe dicta quia natus odio atque aspernatur quam ex quod nemo fugit officiis amet, neque quidem? Ratione repudiandae rerum perferendis accusantium numquam.</p>
-                    </div>
-                    {/* Imagem pessoal da pagina sobre */}
-                    <div className="imgBx">
-                        <img src={ mySelf } />
-                    </div>
-                </div>
-            </section>
+           {/* Sessão Sobre mim */}
+           <AboutMe />
 
             {/* Sessão de habilidades */}
-            <section className="skills" id="skills">
-                <div className="title black">
-                    <h2>Minhas Habilidades</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                </div>
-                    <div className="skills-content">
-                        <div className="column left">
-                            <div className="text">Minhas <span className="hab">Habilidades</span> <span className="simbol">&</span> <span className="exp">Experiências</span></div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia officia, et provident soluta facere, cum non, nihil molestias quas eveniet natus assumenda similique optio. Officia cumque quasi sit ex nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nam aliquam possimus laboriosam enim animi, delectus voluptas est ullam sed deleniti dolorum voluptates dolorem tempore nobis. Cupiditate quas possimus. </p>
-                        </div>
-                {/* Habilidades e Experiencia | divs responsaveis pelas habilidades e niveis        */}
-                        <div className="column right">
-                            <div className="bars">
-                                
-                                <div>
-                                    <p></p>
-                                </div>
-                                <div className="info">
-                                    <span>HTML</span>
-                                    <span>30%</span>
-                                </div>
-                                <div className="line html"></div>
-                            </div>
-                            <div className="bars">
-                                <div className="info">
-                                    <span>CSS</span>
-                                    <span>35%</span>
-                                </div>
-                                <div className="line css"></div>
-                            </div>
-                            <div className="bars">   
-                                <div className="info">
-                                    <span>JavaScript</span>
-                                    <span>45%</span>
-                                </div>
-                                <div className="line js"></div>
-                            </div> 
-                            <div className="bars">  
-                                <div className="info">
-                                    <span>MySQL</span>
-                                    <span>30%</span>
-                                </div>
-                                <div className="line sql"></div>
-                            </div>
-                            <div className="bars"> 
-                                <div className="info">
-                                    <span>Python</span>
-                                    <span>30%</span>
-                                </div>
-                                <div className="line java"></div>
-                            </div>
-                        </div>
-                    </div>
-            </section>
+            <Skills />
 
             {/* Sessão Projetos */}
 
