@@ -6,6 +6,7 @@ import { Home } from "./routes/home";
 import { AboutMe } from './routes/aboutMe';
 
 import UseHeaderShow from './hooks/navBackShow/headerShow';
+import './styles/variables.css';
 
 function App() {
 

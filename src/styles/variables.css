@@ -2,13 +2,19 @@
     --header-height: 7.2rem;
   
     /* colors */
-    --hue: 210;
-    /* HSL color mode */
-    --base-color: ;
-    --base-color-second: hsl(var(--hue) 65% 88%);
-    --base-color-alt: hsl(var(--hue) 57% 53%);
-    --title-color: hsl(var(--hue) 41% 10%);
-    --text-color: hsl(0 0% 46%);
-    --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%);
+
+    /* CSS HEX */
+    --botton-color-alt: #9f0988;
+    --violent-violet: #1c0b5d;
+    --purple: #5c0694;
+    --base-color: #5d0973;
+    --body-color: #1e2131;
+    --body-color-alt: #12151c;
+    --windsor-alt: #3a0773;
+    --deep-blue: #2b0775;
+    --disco: #7c144c;
+    --text-color: #ffffff;
+    --text-color-alt: #000000;
+    --title-color: #333;
+
   }

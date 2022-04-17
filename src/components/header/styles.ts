@@ -26,9 +26,17 @@ export const Header = styled.header`
     top: -3rem;
     left: 7rem;
 
+
       >img {
-        width: 150px;
+        width: 120px;
         height: auto;
+
+        @media(min-width: 375px){
+            width: 120px;
+            left: -7rem;
+            height: auto;
+            position: absolute;
+        }
       }
     }
 
@@ -127,7 +135,7 @@ export const MenuSectionOn = styled(animated.div)<PropsMenuBar>`
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #161617;
+        background-color: var(--body-color-alt);
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -184,8 +192,6 @@ export const Logo = styled.div`
     @media(max-width: 768px){
         width: 75px;
         margin-top: 0;
-        
-
     }
 
     img{

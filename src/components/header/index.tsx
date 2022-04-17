@@ -32,7 +32,7 @@ const HeaderComponent = () => {
         if(!displayMenu){
             setMenuBar(false);
         }else{
-            setMenuBar(true);
+            setMenuBar(false);
         }
     };
 
@@ -51,13 +51,13 @@ const HeaderComponent = () => {
                     </nav>
                     <ContainerIcons>
                         <a href="https://www.instagram.com/">
-                            <FiInstagram size={34} color="#e94b3cff"/>
+                            <FiInstagram size={34} color="#9f0988"/>
                         </a>
                         <a href="https://www.linkedin.com/in/">
-                            <FiLinkedin size={34} color="#e94b3cff"/>
+                            <FiLinkedin size={34} color="#9f0988"/>
                         </a>
                         <a href="https://github.com/">
-                            <FiGithub size={34} color="#e94b3cff"/>
+                            <FiGithub size={34} color="#9f0988"/>
                         </a>
                     </ContainerIcons>
             </MenuSectionOn>
@@ -68,8 +68,8 @@ const HeaderComponent = () => {
                         </Link>
                 </Logo>
                 
-                {menuBar ? <AiOutlineClose onClick={() => handleMenuBar()} size={36} color="#333" />
-                : <FiMenu onClick={() => handleMenuBar()} size={36} color="#333"/>}
+                {menuBar ? <AiOutlineClose onClick={() => handleMenuBar()} size={36} color="#9f0988" />
+                : <FiMenu onClick={() => handleMenuBar()} size={36} color="#9f0988"/>}
                     <nav>
                         <Link to="about" >Sobre</Link>
                         <Link to="services" >Habilidades</Link>
