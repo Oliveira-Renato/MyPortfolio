@@ -21,6 +21,17 @@ export const Header = styled.header`
     justify-content: center;
     z-index: 1;
 
+    .logoText {  
+    position: absolute;
+    top: -3rem;
+    left: 7rem;
+
+      >img {
+        width: 150px;
+        height: auto;
+      }
+    }
+
     
 
     @media(max-width: 768px){

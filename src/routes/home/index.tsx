@@ -18,13 +18,9 @@ import {Projects} from '../projects'
 import toast, { Toaster } from 'react-hot-toast';
 
 import { FormEvent, useState } from 'react';
-<<<<<<< HEAD:src/routes/Home.tsx
-import { useForm } from '@formspree/react'; 
-=======
 import { Skills } from '../skills';
 import HeaderContent from '../../components/header';
 import HeaderComponent from '../../components/header';
->>>>>>> NewLayout:src/routes/home/index.tsx
 
 
 type InputsContent = {
@@ -142,9 +138,6 @@ export function Home(){
                     <img src={ homeImg } alt='Logo home'/>
                 </div>
                 <div className="contentBox">
-                    <h5 className="logoText">
-                        <img src={logo} alt="" />
-                    </h5>
                     <div>
                         <h4><span>Olá</span>, meu nome é</h4>
                         <h2>Renato Oliveira</h2>
