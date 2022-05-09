@@ -15,7 +15,7 @@ import {Projects} from '../components/projects'
 
 import toast, { Toaster } from 'react-hot-toast';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 
 type InputsContent = {
@@ -30,6 +30,24 @@ type InputsContent = {
 
 export function Home(){
     const [inputs, setInputs] = useState<InputsContent[]>([]);
+
+    useEffect(() => {
+       const teste = () => {
+       return  toast('Portfólio ainda em desenvolvimento.',
+        {
+            icon: '💻🚀',
+            style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+            fontSize: '1.6em',
+            },
+        }
+        );
+       }
+
+       teste();
+    });
 
     const HandleCleanInputs = () => {
         // //código temporário, preciso resolver como fazer isso de maneira mais elegante
@@ -137,8 +155,7 @@ export function Home(){
                         <h4><span>Olá</span>, meu nome é</h4>
                         <h2>Renato Oliveira</h2>
                         <h4>Sou um Desenvolvedor Web.</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil laborum quas accusamus reiciendis dicta, repellat voluptates aut accusantium ut inventore expedita tenetur rerum nostrum sapiente. Ipsum voluptatum neque facilis ex.
-                        Accusamus, consectetur incidunt. Saepe sapiente repudiandae harum suscipit quasi laboriosam iusto, aut molestiae enim culpa porro sed quae iure.</p>
+                        <p>Gosto de programar e estou sempre estou aberto a novos desafios. Atualmente estou focado no front-end, mas isso não significa que estou limitado apenas a essa área. <h5><span>&#128512;</span></h5></p>
                         <a href="#about" className="btn">Sobre mim</a>
                     </div>
                     {/* Imagens para contato linkedin, github, etc */}
@@ -160,11 +177,16 @@ export function Home(){
             <section className="about" id="about">
                 <div className="title white">
                     <h2>Sobre mim</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Algumas informações que considero pertinentes sobre minha pessoa.</p>
                 </div>
                 <div className="content">
                     <div className="textBx">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus amet in voluptatem cupiditate voluptatibus dignissimos rem perspiciatis. Nulla tempore rerum quasi voluptates quos quod eveniet consequuntur! Magnam, fugit excepturi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa enim quisquam magnam at libero voluptate recusandae eveniet labore architecto dolore consequatur accusantium doloremque fugiat veniam perferendis ab eum, quos maxime!<br/><br/>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe dicta quia natus odio atque aspernatur quam ex quod nemo fugit officiis amet, neque quidem? Ratione repudiandae rerum perferendis accusantium numquam.</p>
+                        <p>Meu nome é Renato Oliveira, atualmente trabalho como
+                        Programador Web na empresa Kennen Tecnologia e estudo Análise
+                        e Desenvolvimento de Sistemas na faculdade Anhanguera Educacional, atualmente estou cursando o ultimo semestre. Estou sempre em busca de novos
+                        desafios e oportunidades para aprender cada vez mais. Quando não
+                        estou na frente do meu computador, você pode me encontrar lendo
+                        um bom livro ou jogando um bom jogo.</p>
                     </div>
                     {/* Imagem pessoal da pagina sobre */}
                     <div className="imgBx">
@@ -177,12 +199,12 @@ export function Home(){
             <section className="skills" id="skills">
                 <div className="title black">
                     <h2>Minhas Habilidades</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <p>Um pouco mais sobre minhas habilidade e experiências. </p>
                 </div>
                     <div className="skills-content">
                         <div className="column left">
                             <div className="text">Minhas <span className="hab">Habilidades</span> <span className="simbol">&</span> <span className="exp">Experiências</span></div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia officia, et provident soluta facere, cum non, nihil molestias quas eveniet natus assumenda similique optio. Officia cumque quasi sit ex nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nam aliquam possimus laboriosam enim animi, delectus voluptas est ullam sed deleniti dolorum voluptates dolorem tempore nobis. Cupiditate quas possimus. </p>
+                            <p>Essa jornada como desenvolvedor web está me proporcionando muitos desafios e conhecimentos novos. Dentre eles, posso citar aqueles que mais estou em contato no dia-a-dia, esses são: Javascript; React; HTML e  CSS. </p>
                         </div>
                 {/* Habilidades e Experiencia | divs responsaveis pelas habilidades e niveis        */}
                         <div className="column right">
@@ -213,8 +235,8 @@ export function Home(){
                             </div> 
                             <div className="bars">  
                                 <div className="info">
-                                    <span>MySQL</span>
-                                    <span>30%</span>
+                                    <span>React</span>
+                                    <span>35%</span>
                                 </div>
                                 <div className="line sql"></div>
                             </div>
@@ -237,7 +259,7 @@ export function Home(){
             <section className="contact" id="contact">
                 <div className="title white">
                     <h2>Entre em Contato</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores cumque voluptatum doloremque maxime quidem obcaecati, delectus minima soluta similique cupiditate porro debitis.</p>
+                    <p>Se tiver alguma duvida, ou quer apenas dizer um oi? fique a vontade!.</p>
                 </div>
                 <form onSubmit={ HandleSubmitForm } id='main-form'>
                     <div className="contactForm">

@@ -50,7 +50,7 @@ export function Projects(){
     <section className="project" id="project">
       <div className="title white">
         <h2>Meus Projetos</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Alguns projetos desenvolvidos por mim durante minha jornada até aqui.</p>
       </div>
       <div className="main-container">
         <div className="container-project">
