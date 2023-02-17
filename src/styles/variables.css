@@ -1,0 +1,20 @@
+:root {
+    --header-height: 7.2rem;
+  
+    /* colors */
+
+    /* CSS HEX */
+    --botton-color-alt: #9f0988;
+    --violent-violet: #1c0b5d;
+    --purple: #5c0694;
+    --base-color: #5d0973;
+    --body-color: #1e2131;
+    --body-color-alt: #12151c;
+    --windsor-alt: #3a0773;
+    --deep-blue: #2b0775;
+    --disco: #7c144c;
+    --text-color: #ffffff;
+    --text-color-alt: #000000;
+    --title-color: #333;
+
+  }

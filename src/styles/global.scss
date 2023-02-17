@@ -36,6 +36,7 @@ html{
 
 /*pagina inicial*/
 section {
+    background: var(--body-color);
     padding: 100px;
     min-height: 100vh;
 
@@ -66,16 +67,7 @@ section {
   }
 
 
-  .logoText {  
-    position: absolute;
-    top: -3rem;
-    left: 7rem;
-
-      >img {
-        width: 150px;
-        height: auto;
-      }
-  }
+  
 
 
 }
@@ -95,11 +87,11 @@ section {
 
   h4 {
       font-size: 3.5rem;
-      color: #333;
+      color: var(--text-color);
       font-weight: 300;
 
       span {
-        color: #00bcd4;
+        color: var(--base-color);
         font-size: 1.5em;
         font-weight: 700;
     }
@@ -108,13 +100,14 @@ section {
 
   h2 {
       font-size: 5rem;
-      color: #333;
+      color: var(--purple);
       line-height: 4rem;
   }
 }
 
 
 p {
+    color: var(--text-color);
     font-size: 1.7rem;
     margin: 20px 0;
     font-weight: 300;
@@ -123,7 +116,7 @@ p {
 
 
 .btn {
-    background: #00bcd4;
+    background: var(--base-color);
     color: #fff;
     padding: 10px 30px;
     display: inline-block;
@@ -134,7 +127,7 @@ p {
 
     &:hover
     {
-        background: #333;
+        background: var(--text-color);
         transition-duration: 0.5s;
     }
 }
@@ -176,7 +169,7 @@ p {
             text-transform: uppercase;
 
             &:hover {
-                color: #00bcd4;
+                color: var(--base-color);
           }
         }
       }
@@ -220,7 +213,7 @@ p {
 
     h2 {
       position: relative;
-      color:#00bcd4;
+      color:var(--base-color);
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -243,7 +236,7 @@ p {
   }
 
   &.black p {
-    color:#333;
+    color:var(--text-color);
   }
 
   &.white h2, p {
@@ -307,7 +300,7 @@ p {
       font-size: 2.5rem;
       font-weight: 700;
       margin-top: 1rem;
-      color: #333;
+      color: var(--text-color);
 
       .hab {
           font-weight: bolder;
@@ -321,7 +314,7 @@ p {
       }
 
       .simbol {
-          color: #00bcd4;
+          color: var(--base-color);
           font-weight: 700;
           font-size: 3.6rem;
       }
@@ -345,7 +338,7 @@ p {
         .line {
           height: 5px;
           width: 100%;
-          background: #333;
+          background: var(--text-color);
           position: relative;
 
           &::before {
@@ -354,7 +347,7 @@ p {
             height: 100%;
             left: 0;
             top: 0;
-            background:#00bcd4;
+            background:var(--base-color);
         }
     }
   
@@ -431,7 +424,7 @@ p {
       }
 
       input[type="submit"] {
-          background-color: #00bcd4;
+          background-color: var(--base-color);
           color: #fff;
           padding: 10px 30px;
           display: inline-block;
@@ -441,18 +434,18 @@ p {
           max-width: 150px;
 
           &:hover{
-            background: #333;
+            background: var(--text-color);
             transition-duration: 0.5s;
         }
       }
     }
   }
 }
+
 //background: #333;
-//background: #333;
-//background: #333;
-//z-index: 1000;
-//background: #333;
+
+//scroll-behavior: smooth **;
+
 
 
 

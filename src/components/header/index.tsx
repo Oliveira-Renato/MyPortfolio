@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logoMColored from '../../assets/images/logo.png';
 import '../../styles/global.scss'
+import logo from '../../assets/images/logo.png';
 
 import { 
     FiInstagram, 
@@ -37,7 +38,10 @@ const HeaderComponent = () => {
 
 
     return(
-        <Header>
+        <Header id="header">
+            <h5 className="logoText">
+                <img src={logo} alt="" />
+            </h5>
             <MenuSectionOn  ishandled={menuBar} >
                     <nav>
                         <Link onClick={() => handleClickLink()} to="about" >About me</Link>
@@ -46,14 +50,14 @@ const HeaderComponent = () => {
                         <Link onClick={() => handleClickLink()} to="contact" >Contact</Link>
                     </nav>
                     <ContainerIcons>
-                        <a href="https://www.instagram.com/magalsz/">
-                            <FiInstagram size={34} color="#e94b3cff"/>
+                        <a href="https://www.instagram.com/">
+                            <FiInstagram size={34} color="#9f0988"/>
                         </a>
-                        <a href="https://www.linkedin.com/in/matheus-magalh%C3%A3es-araujo/">
-                            <FiLinkedin size={34} color="#e94b3cff"/>
+                        <a href="https://www.linkedin.com/in/">
+                            <FiLinkedin size={34} color="#9f0988"/>
                         </a>
-                        <a href="https://github.com/Magal97">
-                            <FiGithub size={34} color="#e94b3cff"/>
+                        <a href="https://github.com/">
+                            <FiGithub size={34} color="#9f0988"/>
                         </a>
                     </ContainerIcons>
             </MenuSectionOn>
@@ -64,8 +68,8 @@ const HeaderComponent = () => {
                         </Link>
                 </Logo>
                 
-                {menuBar ? <AiOutlineClose onClick={() => handleMenuBar()} size={36} color="#fff" />
-                : <FiMenu onClick={() => handleMenuBar()} size={36} color="#fff"/>}
+                {menuBar ? <AiOutlineClose onClick={() => handleMenuBar()} size={36} color="#9f0988" />
+                : <FiMenu onClick={() => handleMenuBar()} size={36} color="#9f0988"/>}
                     <nav>
                         <Link to="about" >Sobre</Link>
                         <Link to="services" >Habilidades</Link>

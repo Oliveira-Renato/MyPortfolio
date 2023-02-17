@@ -5,6 +5,9 @@
   .main-container{
       margin: 7rem auto;
 
+      @media(max-width: 768px){
+        display: none; 
+      } 
       .container-project {
         margin: 0 auto;
         width: 25rem;
@@ -113,6 +116,9 @@
     border-radius: 4px;
     transition: all 0.5s;
     border: none;
+    @media(max-width: 768px){
+      display: none; 
+    } 
 
     span{
       cursor: pointer;

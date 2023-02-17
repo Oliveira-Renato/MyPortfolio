@@ -138,9 +138,6 @@ export function Home(){
                     <img src={ homeImg } alt='Logo home'/>
                 </div>
                 <div className="contentBox">
-                    <h5 className="logoText">
-                        <img src={logo} alt="" />
-                    </h5>
                     <div>
                         <h4><span>Olá</span>, meu nome é</h4>
                         <h2>Renato Oliveira</h2>

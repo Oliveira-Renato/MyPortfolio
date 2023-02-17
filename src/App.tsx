@@ -5,12 +5,16 @@ import './styles/global.scss'
 import { Home } from "./routes/home";
 import { AboutMe } from './routes/aboutMe';
 
+import UseHeaderShow from './hooks/navBackShow/headerShow';
+import './styles/variables.css';
+
 function App() {
 
   return (
     <div className="App">
       
        <BrowserRouter>
+       <UseHeaderShow />
         
           <Routes>
             
